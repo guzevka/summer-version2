@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h4>Ваша учетная запись</h4>
+    <div th:object="${user}">
+        <table >
+            <tr>
+                <td class="right">Имя:</td>
+                <td><p th:text="*{name}"></p></td>
+            </tr>
+
+            <tr>
+                <td>Почта:</td>
+                <td><p th:text="*{email}"></p></td>
+            </tr>
+            <tr>
+                <td>Роль:</td>
+                <td><p th:text="*{roles}"></p></td>
+            </tr>
+        </table>
+        <form action="/" method="get">
+            <input type="submit" value="Вернуться назад"/>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>
