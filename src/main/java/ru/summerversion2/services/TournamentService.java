@@ -9,5 +9,5 @@ import ru.summerversion2.repositories.TournamentRepository;
 @Slf4j
 @RequiredArgsConstructor
 public class TournamentService {
-    TournamentRepository tournamentRepository;
+    private final TournamentRepository tournamentRepository;
 }

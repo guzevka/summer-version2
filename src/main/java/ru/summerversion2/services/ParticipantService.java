@@ -9,5 +9,5 @@ import ru.summerversion2.repositories.ParticipantRepository;
 @Slf4j
 @RequiredArgsConstructor
 public class ParticipantService {
-    ParticipantRepository participantRepository;
+    private final ParticipantRepository participantRepository;
 }

@@ -1,6 +1,7 @@
 package ru.summerversion2.controllers;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,6 @@ public class NewsController {
         model.addAttribute("news", news);
         return "news/info";
     }
-
     @GetMapping("/news/create")
     private String createNews() throws IOException {
         return "news/create";

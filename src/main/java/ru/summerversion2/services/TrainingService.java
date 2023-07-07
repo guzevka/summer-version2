@@ -9,5 +9,5 @@ import ru.summerversion2.repositories.TrainingRepository;
 @Slf4j
 @RequiredArgsConstructor
 public class TrainingService {
-    TrainingRepository trainingRepository;
+//    private final TrainingRepository trainingRepository;
 }
