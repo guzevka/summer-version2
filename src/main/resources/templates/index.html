@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class="header">
+<!--div class="header">
     <div th:object="${user}">
         <div class="nav-user" th:if="${user != null}">
             <form action="/logout" method="post">
@@ -33,9 +33,29 @@
         </div>
     </div>
 
+</div-->
+
+<div class="header" th:object="${user}">
+    <div class="nav-user" th:if="${user != null}">
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">Выйти</button>
+        </form>
+    </div>
+    <div class="nav-user" th:if="${user == null}">
+        <form th:action="@{/login}" method="get">
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+    <div class="nav-user">
+        <form th:action="@{/profile}" method="get">
+            <button type="submit">Профиль</button>
+        </form>
+    </div>
 </div>
-
-
-</form>
+<div class="main-block" th:object="${user}">
+    <div class="nav-user" th:if="${user != null}">
+        <p th:text="*{name}"></p>
+    </div>
+</div>
 </body>
 </html>

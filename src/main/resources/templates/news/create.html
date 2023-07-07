@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/news/create}" method="post" enctype="multipart/form-data">
+    Название: <input type="text" th:name="title"/><br><br>
+    Описание: <input type="text" th:name="description"/><br><br>
+    <input type="submit" value="Опубликовать"/>
+</form>
+<form th:action="@{/}" method="get">
+    <input type="submit" value="Вернуться назад"/>
+</form>
+</body>
+</html>
