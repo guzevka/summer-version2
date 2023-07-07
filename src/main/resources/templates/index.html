@@ -8,12 +8,8 @@
 <body>
 
 <div class="header">
-    <p>Меню</p>
-</div>
-<div class="main-block">
     <div th:object="${user}">
         <div class="nav-user" th:if="${user != null}">
-            <p th:text="*{name}"></p></td>
             <form action="/logout" method="post">
                 <button type="submit">Выйти</button>
             </form>
@@ -29,9 +25,14 @@
             </form>
         </div>
     </div>
-    <div class="news-block" th:objet="${news}">
-
+</div>
+<div class="main-block">
+    <div th:object="${user}">
+        <div class="nav-user" th:if="${user != null}">
+            <p th:text="*{name}"></p></td>
+        </div>
     </div>
+
 </div>
 
 
