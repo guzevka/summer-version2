@@ -43,6 +43,7 @@ public class UserController {
 
     @PostMapping("/registration")
     public String createUser(User user){
+        user.setIdentifier(userService.generateIdentifier());
         userService.createUser(user);
         return "redirect:/login";
     }

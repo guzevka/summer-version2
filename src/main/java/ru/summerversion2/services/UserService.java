@@ -8,6 +8,8 @@ import ru.summerversion2.models.Role;
 import ru.summerversion2.models.User;
 import ru.summerversion2.repositories.UserRepository;
 
+import java.util.Random;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -29,4 +31,17 @@ public class UserService {
     public User getUserByEmail(String email){
         return userRepository.findByEmail(email);
     }
+
+    public String generateIdentifier(){
+        String word = "";
+        String symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        Random random = new Random();
+        for (int i = 0; i < 7; i++) {
+            int index = random.nextInt(symbols.length());
+            char randomChar = symbols.charAt(index);
+            word += randomChar;
+        }
+        return "#" + word;
+    }
+
 }

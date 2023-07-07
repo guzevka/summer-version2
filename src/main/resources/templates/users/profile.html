@@ -9,9 +9,14 @@
     <h4>Ваша учетная запись</h4>
     <div th:object="${user}">
         <table >
+
             <tr>
                 <td class="right">Имя:</td>
                 <td><p th:text="*{name}"></p></td>
+            </tr>
+            <tr>
+                <td class="right">Фамилия:</td>
+                <td><p th:text="*{surname}"></p></td>
             </tr>
 
             <tr>
@@ -19,8 +24,8 @@
                 <td><p th:text="*{email}"></p></td>
             </tr>
             <tr>
-                <td>Роль:</td>
-                <td><p th:text="*{roles}"></p></td>
+                <td>Номер телефона:</td>
+                <td><p th:text="*{phoneNumber}"></p></td>
             </tr>
         </table>
         <form action="/" method="get">
