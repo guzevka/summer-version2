@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>НОВОСТИ</title>
@@ -39,7 +39,9 @@
 <div class="title-block">
     <h4>LIST OF NEWS</h4>
 </div>
-
+<div class="admin-block">
+    <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/news/create">Добавить </a>
+</div>
 <div class="main-block">
 
     <div class="two-block">

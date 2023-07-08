@@ -31,9 +31,13 @@ body{
     align-content: center;
     display: flex;
     justify-content: center;
+    margin: 5px;
+    padding: 5px;
 }
 
-.two-block{
+.block{
+    padding: 10px;
+    margin: 10px;
     border-width: 3px;
     border-style: solid;
     border-image: linear-gradient(to right, #78FEFF, #1529E3) 1;
@@ -48,6 +52,14 @@ nav ul{
 nav li{
     margin:0px 50px;
 
+}
+footer{
+    background: linear-gradient(45deg, #78FEFF, #1529E3);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    width: 99%;
 }
 
 nav li a{
