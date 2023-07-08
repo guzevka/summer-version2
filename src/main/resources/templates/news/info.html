@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -48,7 +48,8 @@
         <h5>Дата добавления:</h5>
         <p th:text="*{date}"></p>
         <form th:action="@{/news/delete/{id}(id=${news.id})}" method="post">
-            <input type="submit" value="Удалить"/>
+            <input sec:authorize="hasAuthority('ROLE_ADMIN')" type="submit" value="Удалить"/>
+
         </form>
     </div>
 </div>

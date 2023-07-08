@@ -25,6 +25,12 @@ body{
     -webkit-background-clip: text; /* добавляем для Safari */
     color: transparent;
 }
+.admin-block{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
 
 .main-block{
     align-items: center;
@@ -60,6 +66,17 @@ footer{
     bottom: 0;
     text-align: center;
     width: 99%;
+}
+a{
+    text-decoration:none;
+    color: white;
+    transition:500ms;
+}
+a:hover{
+    background: linear-gradient(45deg, #78FEFF, #1529E3);
+    background-clip: text;
+    -webkit-background-clip: text; /* добавляем для Safari */
+    color: transparent;
 }
 
 nav li a{
