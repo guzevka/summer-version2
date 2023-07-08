@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
 <div class="head">
@@ -36,15 +36,24 @@
 
     </div>
 </div>
-<div class="main-block">
-<form th:action="@{/news/create}" method="post" enctype="multipart/form-data">
-    Название: <input type="text" th:name="title"/><br><br>
-    Описание: <input type="text" th:name="description"/><br><br>
-    <input type="submit" value="Опубликовать"/>
-</form>
-<form th:action="@{/}" method="get">
-    <input type="submit" value="Вернуться назад"/>
-</form>
+<div class="title-block">
+    <h4>LIST OF TOURNAMENTS</h4>
 </div>
+<div class="admin-block">
+    <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/tournament/create">Добавить </a>
+</div>
+<div class="main-block">
+
+    <div class="two-block">
+        <div th:if="${tournaments}" th:each="tournaments : ${tournaments}" class="block">
+            <p><b th:text="${tournaments.title}"></b> <span th:text="${tournaments.description}"></span></p>
+            <form th:action="@{/tournament/{id}(id=${tournaments.id})}" method="get">
+                <input type="submit" th:value="'Подробнее'"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>

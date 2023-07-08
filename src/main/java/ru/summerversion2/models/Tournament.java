@@ -3,6 +3,7 @@ package ru.summerversion2.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -21,7 +22,7 @@ public class Tournament {
     private String description;
 
     @Column(name = "date")
-    private Date date;
+    private LocalDate date;
 
     @Column(name = "place")
     private String place;

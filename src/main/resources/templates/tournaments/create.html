@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
 <div class="head">
@@ -37,14 +37,17 @@
     </div>
 </div>
 <div class="main-block">
-<form th:action="@{/news/create}" method="post" enctype="multipart/form-data">
-    Название: <input type="text" th:name="title"/><br><br>
-    Описание: <input type="text" th:name="description"/><br><br>
-    <input type="submit" value="Опубликовать"/>
-</form>
-<form th:action="@{/}" method="get">
-    <input type="submit" value="Вернуться назад"/>
-</form>
+    <form th:action="@{/tournament/create}" method="post" enctype="multipart/form-data">
+        Название: <input type="text" th:name="title"/><br><br>
+        Описание: <input type="text" th:name="description"/><br><br>
+        Место проведения: <input type="text" th:name="place"/><br><br>
+        Максимальное количество участников: <input type="number" th:name="quantity"/><br><br>
+        Дата проведения: <input type="date" th:name="date"/><br><br>
+        <input type="submit" value="Опубликовать"/>
+    </form>
+    <form th:action="@{/}" method="get">
+        <input type="submit" value="Вернуться назад"/>
+    </form>
 </div>
 </body>
 </html>
