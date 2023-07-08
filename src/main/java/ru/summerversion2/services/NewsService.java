@@ -21,6 +21,10 @@ public class NewsService {
         return newsRepository.getNewsById(id);
     }
 
+    public List<News> findAll(){
+        return newsRepository.findAll();
+    }
+
     public void save(News news){
         news.setDate(new Date());
         newsRepository.save(news);

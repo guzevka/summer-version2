@@ -13,6 +13,30 @@ body{
     font-size: 25px;
     background-color: black;
     color: white;
+
+}
+.title-block{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #78FEFF, #1529E3);
+    background-clip: text;
+    -webkit-background-clip: text; /* добавляем для Safari */
+    color: transparent;
+}
+
+.main-block{
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+.two-block{
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #78FEFF, #1529E3) 1;
 }
 
 nav ul{
@@ -32,7 +56,10 @@ nav li a{
     transition:500ms;
 }
 nav li a:hover{
-    color: #1529E3;
+    background: linear-gradient(45deg, #78FEFF, #1529E3);
+    background-clip: text;
+    -webkit-background-clip: text; /* добавляем для Safari */
+    color: transparent;
 }
 img{
     width: 35px;

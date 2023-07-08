@@ -4,10 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.summerversion2.models.News;
 import ru.summerversion2.services.NewsService;
 
@@ -25,6 +22,12 @@ public class NewsController {
         News news = newsService.getNewsById(id);
         model.addAttribute("news", news);
         return "news/info";
+    }
+
+    @GetMapping("/news/list")
+    public String listNews(@RequestParam(name = "title", required = false) String title, Model model){
+        model.addAttribute("news", newsService.findAll());
+        return "news/index";
     }
 
     // Создать новость (GET AND POST)

@@ -18,6 +18,7 @@ public class UserController {
 
     private final UserService userService;
 
+
     @GetMapping("/")
     public String index(Model model){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

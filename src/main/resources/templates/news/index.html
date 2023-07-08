@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>НОВОСТИ</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
@@ -37,19 +37,18 @@
     </div>
 </div>
 <div class="title-block">
-    <h4>NEWS</h4>
+    <h4>LIST OF NEWS</h4>
 </div>
+
 <div class="main-block">
-    <div th:object="${news}">
-        <h5>Название:</h5>
-        <p th:text="*{title}"></p>
-        <h5>Описание:</h5>
-        <p th:text="*{description}"></p>
-        <h5>Дата добавления:</h5>
-        <p th:text="*{date}"></p>
-        <form th:action="@{/news/delete/{id}(id=${news.id})}" method="post">
-            <input type="submit" value="Удалить"/>
-        </form>
+
+    <div class="two-block">
+        <div th:if="${news}" th:each="news : ${news}" class="block">
+            <p><b th:text="${news.title}"></b> <span th:text="${news.description}"></span></p>
+            <form th:action="@{/news/{id}(id=${news.id})}" method="get">
+                <input type="submit" th:value="'Подробнее'"/>
+            </form>
+        </div>
     </div>
 </div>
 </body>
