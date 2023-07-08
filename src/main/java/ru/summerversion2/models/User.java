@@ -36,6 +36,9 @@ public class User implements UserDetails {
     @Column(name = "identifier")
     private String identifier;
 
+    @Column(name = "active")
+    private boolean active;
+
 
     // SECURITY
 

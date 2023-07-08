@@ -72,6 +72,11 @@
                 <button type="submit">Выйти</button>
             </form>
         </div>
+        <div th:if="${user.isAdmin()}">
+            <form th:action="@{/admin}" method="get">
+                <input type="submit" value="Панель администратора">
+            </form>
+        </div>
     </div>
 </div>
 </body>
