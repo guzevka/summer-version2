@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,34 +7,37 @@
 </head>
 <body>
 
-<!--div class="header">
-    <div th:object="${user}">
-        <div class="nav-user" th:if="${user != null}">
-            <form action="/logout" method="post">
-                <button type="submit">Выйти</button>
-            </form>
-        </div>
-        <div class="nav-user" th:if="${user == null}">
-            <form action="/login" method="get">
-                <button type="submit">Войти</button>
-            </form>
-        </div>
-        <div class="nav-user">
-            <form action="/profile" method="get">
-                <button type="submit">Профиль</button>
-            </form>
-        </div>
+<div class="head" th:object="${user}">
+    <div class="nav">
+        <nav>
+            <ul>
+                <li>
+                    <a href="/other/about">О нас</a>
+                </li>
+                <li>
+                    <a href="/teams/index">Команды</a>
+                </li>
+                <li>
+                    <a href="/trainings/index">Тренировки</a>
+                </li>
+                <li>
+                    <a href="/news/index">Новости</a>
+                </li>
+                <li>
+                    <a href="/tournaments/index">Турниры</a>
+                </li>
+                <li>
+                    <a href="/other/disciplines">Дисциплины</a>
+                </li>
+                <li>
+                    <a href="/profile"><img src="/img/profile.png"></a>
+                </li>
+            </ul>
+        </nav>
+
     </div>
 </div>
-<div class="main-block">
-    <div th:object="${user}">
-        <div class="nav-user" th:if="${user != null}">
-            <p th:text="*{name}"></p></td>
-        </div>
-    </div>
-
-</div-->
-
+<!--
 <div class="header" th:object="${user}">
     <div class="nav-user" th:if="${user != null}">
         <form th:action="@{/logout}" method="post">
@@ -52,6 +55,7 @@
         </form>
     </div>
 </div>
+-->
 <div class="main-block" th:object="${user}">
     <div class="nav-user" th:if="${user != null}">
         <p th:text="*{name}"></p>

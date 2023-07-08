@@ -1,30 +1,49 @@
+@font-face {
+    font-family: Mono;
+    src: url(static/fonts/Comfortaa-Regular.ttf);
+}
+
 *{
     margin: 0 auto;
     padding: 0;
+    font-family: Mono, serif;
 }
+
 body{
-    box-sizing: border-box;
-}
-.header{
-    display:flex;
-    width:100%;
-    justify-content:space-around;
-    z-index:1;
-    margin: 0 auto;
-    flex-direction:row;
+    font-size: 25px;
     background-color: black;
     color: white;
 }
-.main-block{
-    min-height:100vh;
-    min-width:100%;
-    position:absolute;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: 300% 300%;
-    background-image: linear-gradient(-45deg, #3bade3 0%, #E52B50 25%, #E32636 51%, #ff357f 100%);
+
+nav ul{
+    display:flex;
+    flex-direction:row;
+    list-style:none;
+    justify-content: space-around;
+}
+nav li{
+    margin:0px 50px;
+
 }
 
+nav li a{
+    text-decoration:none;
+    color: white;
+    transition:500ms;
+}
+nav li a:hover{
+    color: #1529E3;
+}
+img{
+    width: 35px;
+    height: 35px;
+}
+
+button{
+    padding: 10px;
+    margin: 10px;
+    background-color: #78FEFF;
+    font-size: 25px;
+    color: black;
+    border-radius: 10px;
+}

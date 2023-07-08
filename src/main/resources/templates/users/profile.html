@@ -30,9 +30,14 @@
                 <td><p th:text="*{identifier}"></p></td>
             </tr>
         </table>
-        <form action="/" method="get">
+        <form th:action="@{/}" method="get">
             <input type="submit" value="Вернуться назад"/>
         </form>
+        <div th:if="${user != null}">
+            <form th:action="@{/logout}" method="post">
+                <button type="submit">Выйти</button>
+            </form>
+        </div>
     </div>
 </div>
 </body>

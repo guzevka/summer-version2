@@ -27,4 +27,8 @@ public class NewsService {
         log.info("saving new {}", news);
     }
 
+    public void delete(Long id){
+        newsRepository.deleteById(id);
+    }
+
 }
