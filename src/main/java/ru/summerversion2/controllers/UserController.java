@@ -60,6 +60,11 @@ public class UserController {
         return "users/profile";
     }
 
+    @GetMapping("/other/about")
+    public String about(){
+        return "other/about";
+    }
+
 //    @GetMapping("/user/{user}")
 //    public String userInfo(@PathVariable("user") User user, Model model){
 //        model.addAttribute("user", user);

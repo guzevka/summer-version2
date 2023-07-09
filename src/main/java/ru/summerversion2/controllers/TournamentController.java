@@ -25,7 +25,7 @@ public class TournamentController {
         return "tournaments/info";
     }
 
-    @GetMapping("/tournaments/list")
+    @GetMapping("/tournament/list")
     public String listTournament(@RequestParam(name = "title", required = false) String title, Model model){
         model.addAttribute("tournaments", tournamentService.findAll());
         return "tournaments/index";
