@@ -12,6 +12,7 @@ import ru.summerversion2.models.Tournament;
 import ru.summerversion2.services.TournamentService;
 
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -47,4 +48,11 @@ public class TournamentController {
         tournamentService.delete(id);
         return "redirect:/";
     }
+
+    // НЕ РАБОТАЕТ
+//    @GetMapping("/tournament/last")
+//    public String getLastTournaments(Model model) {
+//        model.addAttribute("lastTournament", tournamentService.findTournamentByDate());
+//        return "index";
+//    }
 }

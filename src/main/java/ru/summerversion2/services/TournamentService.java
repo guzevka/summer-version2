@@ -2,6 +2,7 @@ package ru.summerversion2.services;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import ru.summerversion2.models.Tournament;
 import ru.summerversion2.repositories.TournamentRepository;
@@ -34,5 +35,10 @@ public class TournamentService {
     public void delete(Long id){
         tournamentRepository.deleteById(id);
     }
+
+    // НЕ РАБОТАЕТ
+//    public Tournament findTournamentByDate() {
+//        return tournamentRepository.findTournamentByDate();
+//    }
 
 }

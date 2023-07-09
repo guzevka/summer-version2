@@ -1,12 +1,12 @@
 @font-face {
     font-family: Mono;
-    src: url(static/fonts/Comfortaa-Regular.ttf);
+    src: url("static/fonts/MontserratAlternates-Medium.ttf");
 }
 
 *{
     margin: 0 auto;
     padding: 0;
-    font-family: Mono, serif;
+    font-family: Mono, sans-serif;
 }
 
 body{

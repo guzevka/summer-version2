@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
-    <style>
+    <!--style>
         @font-face {
             font-family: Mono;
             src: url(static/fonts/Comfortaa-Regular.ttf);
@@ -14,6 +14,14 @@
             margin: 0 auto;
             padding: 0;
             font-family: Mono, serif;
+        }
+        .main-block{
+            align-items: center;
+            align-content: center;
+            display: flex;
+            justify-content: center;
+            margin: 5px;
+            padding: 5px;
         }
 
         body{
@@ -59,14 +67,16 @@
             width: 99%;
         }
 
-    </style>
+    </style-->
 </head>
 <body>
-
 <div class="head">
     <div class="nav">
         <nav>
             <ul>
+                <li>
+                    <a href="/"><img src="/img/home-icon.png"></a>
+                </li>
                 <li>
                     <a href="/other/about">О нас</a>
                 </li>
@@ -86,7 +96,7 @@
                     <a href="/other/disciplines">Дисциплины</a>
                 </li>
                 <li>
-                    <a href="/profile">Профиль</a>
+                    <a href="/profile"><img src="/img/profile.png"></a>
                 </li>
             </ul>
         </nav>
@@ -95,33 +105,17 @@
 </div>
 <div class="main-block">
     <p>CYBER LAB</p>
-</div>
-<!--
-<div class="header" th:object="${user}">
-    <div class="nav-user" th:if="${user != null}">
-        <form th:action="@{/logout}" method="post">
-            <button type="submit">Выйти</button>
-        </form>
-    </div>
-    <div class="nav-user" th:if="${user == null}">
-        <form th:action="@{/login}" method="get">
-            <button type="submit">Войти</button>
-        </form>
-    </div>
-    <div class="nav-user">
-        <form th:action="@{/profile}" method="get">
-            <button type="submit">Профиль</button>
-        </form>
-    </div>
-</div>
--->
-<!--div-- class="main-block" th:object="${user}">
-    <div class="nav-user" th:if="${user != null}">
-        <p th:text="*{name}"></p>
-    </div>
-</div-->
-<div class="sponsors">
 
+    <!-- НЕ РАБОТАЕТ, ГОВОРИТ ЧТО ТАЙТЛ НАЛЛ -->
+    <!--div-- class="tournament-block" th:object="${lastTournament}">
+        <p th:text="*{title}"></p>
+        <p th:text="*{place}"></p>
+        <p th:text="*{date}"></p>
+    </div-->
+</div>
+
+
+<div class="sponsors">
 </div>
 <footer>
 <p>Ths is footer</p>
