@@ -1,19 +1,19 @@
 @font-face {
-    font-family: Mono;
-    src: url("static/fonts/MontserratAlternates-Medium.ttf");
+    font-family: Mont;
+    src: url("../fonts/PressStart2P-Regular.ttf");
 }
 
 *{
     margin: 0 auto;
     padding: 0;
-    font-family: Mono, sans-serif;
+    font-family: Mont, sans-serif;
 }
 
 body{
-    font-size: 25px;
+    font-size: 15px;
     background-color: black;
     color: white;
-
+    font-family: Mont, sans-serif;
 }
 .title-block{
     display: flex;
@@ -22,6 +22,8 @@ body{
     justify-content: center;
     background: linear-gradient(45deg, #78FEFF, #1529E3);
     background-clip: text;
+    margin: 15px;
+    padding: 15px;
     -webkit-background-clip: text; /* добавляем для Safari */
     color: transparent;
 }
@@ -30,6 +32,8 @@ body{
     align-items: center;
     align-content: center;
     justify-content: center;
+    margin: 15px;
+    padding: 15px;
 }
 
 .main-block{
@@ -38,8 +42,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 5px;
-    padding: 5px;
+    margin: 15px;
+    padding: 15px;
 }
 .logo-img{
     width: 20%;
@@ -47,8 +51,8 @@ body{
 }
 
 .block{
-    padding: 10px;
-    margin: 10px;
+    margin: 15px;
+    padding: 15px;
     border-width: 3px;
     border-style: solid;
     border-image: linear-gradient(to right, #78FEFF, #1529E3) 1;

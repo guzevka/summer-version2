@@ -24,7 +24,7 @@ public class SecurityConfig {
         http.csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/","/news/**","/registration", "/other/**", "/team/**", "/tournament/**","/user/**", "/css/**", "/img/**")
+                .requestMatchers("/","/news/**","/registration", "/other/**", "/team/**", "/tournament/**","/user/**", "/css/**", "/img/**","/fonts/**")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
