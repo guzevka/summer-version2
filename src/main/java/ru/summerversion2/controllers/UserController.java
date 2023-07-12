@@ -18,14 +18,14 @@ public class UserController {
 
     private final UserService userService;
 
-
+/*
     @GetMapping("/")
     public String index(Model model){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.getUserByEmail(auth.getName());
         model.addAttribute("user", user);
         return "index";
-    }
+    }*/
 
     @GetMapping("/login")
     public String login(){
@@ -63,6 +63,11 @@ public class UserController {
     @GetMapping("/other/about")
     public String about(){
         return "other/about";
+    }
+
+    @GetMapping("/other/disciplines")
+    public String disciplines(){
+        return "other/disciplines";
     }
 
 //    @GetMapping("/user/{user}")

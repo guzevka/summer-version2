@@ -35,4 +35,8 @@ public class NewsService {
         newsRepository.deleteById(id);
     }
 
+    public List<News> findLatestNews() {
+        return newsRepository.findTop3ByOrderByDateDesc();
+    }
+
 }

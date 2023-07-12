@@ -17,10 +17,17 @@ public class Training {
     @Column(name = "date")
     private String date;
 
+    @Column(name = "time")
+    private String time;
+
+    // длительность тренировки (в часах)
+    @Column(name = "duration")
+    private String duration;
+
     @Column(name = "location")
     private String location;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private User user;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "user_id")
+//    private User user;
 }

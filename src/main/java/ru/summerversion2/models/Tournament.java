@@ -22,7 +22,7 @@ public class Tournament {
     private String description;
 
     @Column(name = "date")
-    private LocalDate date;
+    private Date date;
 
     @Column(name = "place")
     private String place;

@@ -12,10 +12,10 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class TrainingService {
-  /*  private final TrainingRepository trainingRepository;
+    private final TrainingRepository trainingRepository;
 
     public Training findTrainingById(Long id){
-        return trainingRepository.getById(id);
+        return trainingRepository.findTrainingById(id);
     }
 
     public List<Training> findAll() {
@@ -29,5 +29,5 @@ public class TrainingService {
 
     public void delete(Long id){
         trainingRepository.deleteById(id);
-    }*/
+    }
 }

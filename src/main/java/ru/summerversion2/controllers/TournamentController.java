@@ -49,6 +49,16 @@ public class TournamentController {
         return "redirect:/";
     }
 
+    @GetMapping("/tournament/subscribe")
+    private String subscribeTournament(){
+        return "tournaments/subscribe";
+    }
+
+    @PostMapping("/tournament/subscribe")
+    private String subscribeTournament(@PathVariable Long id){
+        return "redirect:/";
+    }
+
     // НЕ РАБОТАЕТ
 //    @GetMapping("/tournament/last")
 //    public String getLastTournaments(Model model) {

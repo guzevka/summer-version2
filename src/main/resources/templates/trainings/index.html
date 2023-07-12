@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>НОВОСТИ</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
@@ -39,16 +39,28 @@
 
     </div>
 </div>
+<div class="title-block">
+    <h4>LIST OF TRAININGS</h4>
+</div>
+<div class="admin-block">
+    <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/training/create">Добавить </a>
+</div>
 <div class="main-block">
-    <div class="title-block">DISCIPLINES</div>
-    <div class="block">
-        <img src="/img/games/logo-dota2-yes.png">
-    </div>
-    <div class="block">
-        <img src="/img/games/logo-league-yes.png">
-    </div>
-    <div class="block">
-        <img src="/img/games/logo-valorant-yes.png">
+
+    <div class="two-block">
+        <div th:if="${training}" th:each="training : ${training}" class="block">
+            <p><b th:text="${training.description}"></b></p>
+            <p><span th:text="${training.location}"></span></p>
+            <p> <b th:text="${training.date}"></b> <span th:text="${training.time}"></span></p>
+            <p>Длительность (в часах):<p th:text="${training.duration}"></p></p>
+            <form th:action="@{/training/delete/{id}(id=${training.id})}" method="post">
+                <input sec:authorize="hasAuthority('ROLE_ADMIN')" type="submit" value="Удалить"/>
+
+            </form>
+            <form th:action="@{/training/{id}(id=${training.id})}" method="get">
+                <input sec:authorize="hasAuthority('ROLE_USER')" type="submit" th:value="'Записаться'"/>
+            </form>
+        </div>
     </div>
 </div>
 </body>

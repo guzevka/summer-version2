@@ -21,7 +21,7 @@
                     <a href="/teams/index">Команды</a>
                 </li>
                 <li>
-                    <a href="/trainings/index">Тренировки</a>
+                    <a href="/training/list">Тренировки</a>
                 </li>
                 <li>
                     <a href="/news/list">Новости</a>
@@ -49,6 +49,30 @@
         <p th:text="*{place}"></p>
         <p th:text="*{date}"></p>
     </div-->
+    <div class="title-block"><p>Ближайший турнир</p></div>
+    <div class="block" th:object="${latestTournament}">
+        <h3 th:text="*{title}"></h3>
+        <h4 th:text="*{place}"></h4>
+        <h5 th:text="*{date}"></h5>
+        <form th:action="@{/tournament/{id}(id=${latestTournament.id})}" method="get">
+            <input type="submit" th:value="'Подробнее'"/>
+        </form>
+        <form th:action="@{/tournament/subscribe}" method="get">
+            <input type="submit" th:value="'Записаться'">
+        </form>
+    </div>
+    <div class="title-block"><p>Новости</p></div>
+    <div>
+        <ul th:each="n : ${latestNews}">
+            <div class="block">
+                <h4 th:text="${n.title}"></h4>
+                <h3 th:text="${n.description}"></h3>
+                <form th:action="@{/news/{id}(id=${n.id})}" method="get">
+                    <input type="submit" th:value="'Подробнее'"/>
+                </form>
+            </div>
+        </ul>
+    </div>
 </div>
 
 

@@ -40,16 +40,17 @@
     </div>
 </div>
 <div class="main-block">
-    <div class="title-block">DISCIPLINES</div>
-    <div class="block">
-        <img src="/img/games/logo-dota2-yes.png">
-    </div>
-    <div class="block">
-        <img src="/img/games/logo-league-yes.png">
-    </div>
-    <div class="block">
-        <img src="/img/games/logo-valorant-yes.png">
-    </div>
+    <form th:action="@{/training/create}" method="post" enctype="multipart/form-data">
+        Описание: <input type="text" th:name="description"/><br><br>
+        Локация: <input type="text" th:name="location"/><br><br>
+        Дата: <input type="date" th:name="date"/><br><br>
+        Время: <input type="time" th:name="time"/><br><br>
+        Длительность (в часах): <input type="number" th:name="duration"/><br><br>
+        <input type="submit" value="Опубликовать"/>
+    </form>
+    <form th:action="@{/}" method="get">
+        <input type="submit" value="Вернуться назад"/>
+    </form>
 </div>
 </body>
 </html>

@@ -20,7 +20,7 @@
                     <a href="/teams/index">Команды</a>
                 </li>
                 <li>
-                    <a href="/trainings/index">Тренировки</a>
+                    <a href="/training/list">Тренировки</a>
                 </li>
                 <li>
                     <a href="/news/list">Новости</a>
@@ -48,7 +48,7 @@
         <p th:text="*{title}"></p>
         <h5>Описание:</h5>
         <p th:text="*{description}"></p>
-        <h5>Дата добавления:</h5>
+        <h5>Дата проведения:</h5>
         <p th:text="*{date}"></p>
         <form th:action="@{/tournament/delete/{id}(id=${tournament.id})}" method="post">
             <input sec:authorize="hasAuthority('ROLE_ADMIN')" type="submit" value="Удалить"/>

@@ -16,7 +16,7 @@ import ru.summerversion2.services.TrainingService;
 public class TrainingController {
 
     private final TrainingService trainingService;
-/*
+
     @GetMapping("/training/list")
     public String listTraining(@RequestParam(name = "title", required = false) String title, Model model){
         model.addAttribute("training", trainingService.findAll());
@@ -39,5 +39,5 @@ public class TrainingController {
         trainingService.delete(id);
         return "redirect:/";
     }
-*/
+
 }
