@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -38,6 +38,32 @@
         </nav>
 
     </div>
+</div>
+<div class="main-block">
+    <!--form th:action="@{/team/create}" th:object="${team}" method="post">
+
+    </form-->
+
+    <!--form method="post" th:action="@{/team/create}" enctype="multipart/form-data">
+        <label>Название команды:</label>
+        <input type="text" th:field="*{team.title}">
+        <br>
+        <label>Участники:</label>
+        <form action="/user/find" method="get">
+            <label for="identifier">Идентификатор</label>
+            <input id="identifier" type="text" name="identifier">
+            <button type="submit">Найти</button>
+        </form>
+
+        <input type="submit" value="Создать команду"/>
+    </form-->
+    <label>Участники:</label>
+    <form action="/team/changeStatus" method="get">
+        <label for="identifier">Идентификатор</label>
+        <input id="identifier" type="text" name="identifier">
+        <button type="submit">Найти</button>
+    </form>
+
 </div>
 </body>
 </html>

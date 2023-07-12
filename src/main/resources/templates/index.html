@@ -57,6 +57,7 @@
         <form th:action="@{/tournament/{id}(id=${latestTournament.id})}" method="get">
             <input type="submit" th:value="'Подробнее'"/>
         </form>
+
         <form th:action="@{/tournament/subscribe}" method="get">
             <input type="submit" th:value="'Записаться'">
         </form>

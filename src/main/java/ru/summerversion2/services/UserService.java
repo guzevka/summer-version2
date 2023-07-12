@@ -30,6 +30,14 @@ public class UserService {
         return true;
     }
 
+    public Optional<User> findById(Long id){
+        return userRepository.findById(id);
+    }
+
+    public User findByIdentifier(String ident){
+        return userRepository.findByIdentifier(ident);
+    }
+
     public List<User> list() {
         return userRepository.findAll();
     }

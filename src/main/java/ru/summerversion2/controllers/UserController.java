@@ -2,6 +2,7 @@ package ru.summerversion2.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -48,6 +49,15 @@ public class UserController {
         userService.createUser(user);
         return "redirect:/login";
     }
+
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
+    @GetMapping("/user/find")
+    public String findById(Model model){
+        return "teams/create";
+    }
+
+
+
 
     @GetMapping("/profile")
     // 1. только авторизованный пользователь может зайти на свой профиль

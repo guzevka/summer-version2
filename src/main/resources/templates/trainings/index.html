@@ -57,7 +57,7 @@
                 <input sec:authorize="hasAuthority('ROLE_ADMIN')" type="submit" value="Удалить"/>
 
             </form>
-            <form th:action="@{/training/{id}(id=${training.id})}" method="get">
+            <form th:action="@{'/bookedTraining/new/' + ${training.id}}" method="get">
                 <input sec:authorize="hasAuthority('ROLE_USER')" type="submit" th:value="'Записаться'"/>
             </form>
         </div>

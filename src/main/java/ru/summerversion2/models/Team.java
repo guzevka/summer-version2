@@ -17,10 +17,9 @@ public class Team {
     @Column(name = "title")
     private String title;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "participants_id")
-    private List<Participant> participants;
-
     @Column(name = "quantity")
     private int quantity;
+
+    @Column(name="description")
+    private String description;
 }
