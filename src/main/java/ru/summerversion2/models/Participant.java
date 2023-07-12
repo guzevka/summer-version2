@@ -16,10 +16,6 @@ public class Participant {
     @JoinColumn(name="\"user\"")
     private User user;
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "tournament")
-//    private Tournament tournament;
-
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Team team;
 }
