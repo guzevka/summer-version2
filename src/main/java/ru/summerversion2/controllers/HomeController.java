@@ -28,6 +28,7 @@ public class HomeController {
 
         List<News> latestNews = newsService.findLatestNews();
         model.addAttribute("latestNews", latestNews);
+        System.out.println("hello");
 
         return "index";
     }
