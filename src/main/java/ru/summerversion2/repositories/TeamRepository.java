@@ -6,7 +6,7 @@ import ru.summerversion2.models.Team;
 import java.util.List;
 
 public interface TeamRepository extends JpaRepository<Team, Long> {
-    Team findTeamByTitle(String title);
+    Team findByTitle(String title);
 
     Team getTeamById(Long id);
 

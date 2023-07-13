@@ -3,7 +3,6 @@ package ru.summerversion2.services;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.summerversion2.models.Participant;
 import ru.summerversion2.models.Team;
 import ru.summerversion2.repositories.ParticipantRepository;
 import ru.summerversion2.repositories.TeamRepository;
@@ -22,20 +21,23 @@ public class TeamService {
     }
 
     public Team findTeamByTitle(String title){
-        return teamRepository.findTeamByTitle(title);
+        return teamRepository.findByTitle(title);
     }
 
     public List<Team> findAll(){
         return teamRepository.findAll();
     }
 
-//    public void save(Team team){
-//        teamRepository.save(team);
-//        log.info("saving new {}", team);
-//    }
+
 
     public void save(Team team) {
-        Team savedTeam = teamRepository.save(team);
+        teamRepository.save(team);
+        log.info("saving new team: {}", team);
+    }
+
+    public void delete(Long id) {
+        teamRepository.deleteById(id);
+        log.info("delete team: {}", id);
     }
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -40,33 +40,23 @@
   </div>
 </div>
 <div class="title-block">
-  <h4>Учетная запись пользователя</h4>
+  <h4>LIST OF TEAMS</h4>
+</div>
+<div class="admin-block">
+  <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/team/create">Добавить </a>
 </div>
 <div class="main-block">
 
-  <div th:object="${user}">
-    <table >
-      <tr>
-        <td class="right">Имя:</td>
-        <td><p th:text="*{name}"></p></td>
-      </tr>
-      <tr>
-        <td class="right">Фамилия:</td>
-        <td><p th:text="*{surname}"></p></td>
-      </tr>
-      <tr>
-        <td>Почта:</td>
-        <td><p th:text="*{email}"></p></td>
-      </tr>
-      <tr>
-        <td>Номер телефона:</td>
-        <td><p th:text="*{phoneNumber}"></p></td>
-      </tr>
-      <tr>
-        <td>Идентификатор:</td>
-        <td><p th:text="*{identifier}"></p></td>
-      </tr>
-    </table>
+  <div class="two-block">
+    <div th:if="${teams}" th:each="team : ${teams}" class="block">
+      <p><b th:text="${team.title}"></b> <span th:text="${team.description}"></span></p>
+      <form th:action="@{/team/{id}(id=${team.id})}" method="get">
+        <input type="submit" th:value="'Подробнее'"/>
+      </form>
+      <form th:action="@{/team/{team_id}/findUser(team_id=${team.id})}">
+        <input type="submit" th:value="'Добавить участников'"/>
+      </form>
+    </div>
   </div>
 </div>
 </body>

@@ -17,7 +17,7 @@
                     <a href="/other/about">О нас</a>
                 </li>
                 <li>
-                    <a href="/teams/index">Команды</a>
+                    <a href="/team/index">Команды</a>
                 </li>
                 <li>
                     <a href="/training/list">Тренировки</a>
@@ -57,12 +57,29 @@
 
         <input type="submit" value="Создать команду"/>
     </form-->
-    <label>Участники:</label>
+
+    <form method="post" th:action="@{/team/create}" enctype="multipart/form-data">
+        <label>Название команды:</label>
+        <br><br>
+        <input type="text" th:field="*{team.title}">
+        <br><br>
+        <label>Описание команды (девиз и так далее):</label>
+        <br><br>
+        <input type="text" th:field="*{team.description}">
+        <br><br>
+        <label>Количество участников</label>
+        <br><br>
+        <input type="number" th:field="*{team.quantity}">
+        <br><br>
+        <button type="submit">Создать команду</button>
+    </form>
+    <!-- Рабочая штука по поиску участника по идентификатору -->
+    <!--label>Участники:</label>
     <form action="/team/changeStatus" method="get">
         <label for="identifier">Идентификатор</label>
         <input id="identifier" type="text" name="identifier">
         <button type="submit">Найти</button>
-    </form>
+    </form-->
 
 </div>
 </body>
