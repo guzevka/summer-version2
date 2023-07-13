@@ -52,7 +52,7 @@ public class TeamController {
     public String createTeam(@ModelAttribute("team") @RequestBody Team team, Model model) {
         model.addAttribute("team", team);
         teamService.save(team);
-        return "/teams/index";
+        return "redirect:/team/index";
 
     }
 
