@@ -41,17 +41,35 @@
 </div>
 <div class="main-block">
     <div th:object="${team}">
-        <h5>Название:</h5>
-        <p th:text="*{title}"></p>
-        <h5>Описание:</h5>
-        <p th:text="*{description}"></p>
-        <h5>Дата добавления:</h5>
-        <p th:text="*{quantity}"></p>
+        <table>
+            <tr>
+                <td>Название:</td>
+                <td><p th:text="*{title}"></p></td>
+            </tr>
+            <tr>
+                <td>Описание:</td>
+                <td><p th:text="*{description}"></p></td>
+            </tr>
+            <tr>
+                <td>Количество участников:</td>
+                <td><p th:text="*{quantity}"></p></td>
+            </tr>
+        </table>
     </div>
-    <tr th:each="participant : ${participants}">
-        <td th:text="${participant.user.name}"></td>
-        <td th:text="${participant.user.email}"></td>
-    </tr>
+    <p>Список участников команды: </p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr th:each="participant : ${participants}" th:object="${participants}">
+            <td th:text="${participant.user.id}"></td>
+            <td th:text="${participant.user.name}"></td>
+            <td th:text="${participant.user.email}"></td>
+        </tr>
+    </table>
+
 </div>
 </body>
 </html>

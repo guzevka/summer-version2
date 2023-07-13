@@ -12,6 +12,7 @@ public interface ParticipantRepository extends JpaRepository<Participant, Long> 
     @Query("select p from Participant p where p.team.id = :team_id and p.user.id = :user_id")
     Participant findParticipantByTeamIdAndUserId(@Param("team_id") Long team_id, @Param("user_id") Long user_id);
 
-    List<Participant> findByTeam_Id(Long teamId);
+    List<Participant> findByTeamId(Long teamId);
+
 
 }

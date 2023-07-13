@@ -55,7 +55,7 @@ public class ParticipantService {
     }
 
     public List<Participant> getParticipantsByTeamId(Long teamId) {
-        return participantRepository.findByTeam_Id(teamId);
+        return participantRepository.findByTeamId(teamId);
     }
 
 }

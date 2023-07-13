@@ -78,7 +78,8 @@ public class TeamController {
         participant.setTeam(team);
         participantService.addParticipantToTeam(participant);
         teamService.save(team);
-        return "redirect:/team/" + team.getId(); // Перенаправляем на страницу команды
+        //return "redirect:/team/" + team.getId(); // Перенаправляем на страницу команды
+        return "redirect:/team/info/" + team.getId();
     }
 
     @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
@@ -99,10 +100,11 @@ public class TeamController {
         return "teams/changeStatus";
     }
 
-    @GetMapping("/team/{team_id}/participants")
-    public String getParticipants(@PathVariable("team_id") Long team_id, Model model) {
-        List<Participant> participants = participantService.getParticipantsByTeamId(team_id);
-        model.addAttribute("participants", participants);
+    @GetMapping("/team/info/{team_id}")
+    public String getTeamInfo(@PathVariable("team_id") Long team_id, Model model) {
+        model.addAttribute("team", teamService.getTeamById(team_id));
+        model.addAttribute("participants", participantService.getParticipantsByTeamId(team_id));
+        model.addAttribute("teamId", team_id);
         return "teams/info";
     }
 
