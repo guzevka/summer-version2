@@ -59,10 +59,4 @@ public class TournamentController {
         return "redirect:/";
     }
 
-    // НЕ РАБОТАЕТ
-//    @GetMapping("/tournament/last")
-//    public String getLastTournaments(Model model) {
-//        model.addAttribute("lastTournament", tournamentService.findTournamentByDate());
-//        return "index";
-//    }
 }

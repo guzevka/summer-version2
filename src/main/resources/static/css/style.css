@@ -193,10 +193,25 @@ nav li a:hover{
 }
 
 button{
-    padding: 10px;
-    margin: 10px;
-    background-color: #78FEFF;
-    font-size: 25px;
-    color: black;
+    padding: 5px;
+    margin: 5px;
+    background: linear-gradient(45deg, #78FEFF, #1312ff);
+    background-clip: text;
+    -webkit-background-clip: text; /* добавляем для Safari */
+
+    font-size: 15px;
+    color: white;
     border-radius: 10px;
+    font-family: var(--press);
 }
+input{
+    padding: 5px;
+    margin: 5px;
+    background: linear-gradient(45deg, #78FEFF, #1312ff);
+    font-size: 15px;
+    color: white;
+    border-radius: 10px;
+    font-family: var(--press);
+}
+
+

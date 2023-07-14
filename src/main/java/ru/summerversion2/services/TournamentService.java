@@ -42,9 +42,5 @@ public class TournamentService {
         return tournamentRepository.findFirstByDateAfterOrderByDateAsc(currentDate);
     }
 
-    // НЕ РАБОТАЕТ
-//    public Tournament findTournamentByDate() {
-//        return tournamentRepository.findTournamentByDate();
-//    }
 
 }

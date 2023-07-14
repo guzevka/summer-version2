@@ -17,25 +17,6 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class ParticipantService {
-//    private final TeamRepository teamRepository;
-//    private final UserRepository userRepository;
-//
-//    public void addParticipantToTeam(String title, String userIdentifier) {
-//        Team team = teamRepository.findByTitle(title);
-//        User user = userRepository.findByIdentifier(userIdentifier);
-//
-//        Participant participant = new Participant();
-//        participant.setTeam(team);
-//        participant.setUser(user);
-//
-//        team.getParticipants().add(participant);
-//        user.getParticipants().add(participant);
-//
-//        teamRepository.save(team);
-//        userRepository.save(user);
-//    }
-
-
     private final TeamRepository teamRepository;
     private final UserRepository userRepository;
     private final ParticipantRepository participantRepository;

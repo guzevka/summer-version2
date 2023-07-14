@@ -77,22 +77,6 @@
       <input type="submit" value="Добавить участника в эту команду"/>
     </form>
 
-    <!-- ЗДЕСЬ ПРОБЛЕМА -- НЕ НАХОДИТ КОМАНДУ  -->
-    <!--form th:action="@{/team/{team_id}/add-participant/{user_id}(team_id=${team.id})(user_id=${user.id})}" method="post">
-      <input type="hidden" name="team_id" th:value="${team.id != null ? team.id : ''}">
-      <button type="submit">Добавить участника в только что созданную команду</button>
-    </form-->
-
-
-    <!--form th:action="@{/team/{team_id}/add-participant/{user_id}(team_id=${team_id})(user_id=${user.id})}" method="post">
-      <input type="hidden" name="team_id" th:value="${team_id}">
-      <button type="submit">Добавить участника в только что созданную команду</button>
-    </form-->
-    <!--form th:action="@{/team/add-participant}" method="post">
-      <input type="text" name="identifier" placeholder="Идентификатор участника">
-      <input type="hidden" name="team_id" th:value="${team.id != null ? team.id : ''}">
-      <button type="submit">Добавить участника в только что созданную команду</button>
-    </form-->
   </div>
 </div>
 

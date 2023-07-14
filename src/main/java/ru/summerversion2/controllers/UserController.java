@@ -19,15 +19,6 @@ public class UserController {
 
     private final UserService userService;
 
-/*
-    @GetMapping("/")
-    public String index(Model model){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.getUserByEmail(auth.getName());
-        model.addAttribute("user", user);
-        return "index";
-    }*/
-
     @GetMapping("/login")
     public String login(){
         return "security/login";
@@ -56,9 +47,6 @@ public class UserController {
         return "teams/create";
     }
 
-
-
-
     @GetMapping("/profile")
     // 1. только авторизованный пользователь может зайти на свой профиль
     // 2. доступ разрешен только известным пользователям, которые зашли в систему
@@ -79,11 +67,5 @@ public class UserController {
     public String disciplines(){
         return "other/disciplines";
     }
-
-//    @GetMapping("/user/{user}")
-//    public String userInfo(@PathVariable("user") User user, Model model){
-//        model.addAttribute("user", user);
-//        return "user-info";
-//    }
 
 }

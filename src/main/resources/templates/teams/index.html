@@ -59,7 +59,7 @@
         <input type="submit" th:value="'Подробнее'"/>
       </form>
 
-      <form th:action="@{/team/{team_id}/findUser(team_id=${team.id})}">
+      <form th:action="@{/team/{team_id}/findUser(team_id=${team.id})}" sec:authorize="hasAuthority('ROLE_ADMIN')">
         <input type="submit" th:value="'Добавить участников'"/>
       </form>
     </div>

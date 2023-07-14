@@ -11,13 +11,5 @@ public interface TournamentRepository extends JpaRepository<Tournament, Long> {
 
     Tournament findTournamentById(Long id);
 
-    //    @Query("SELECT t FROM Tournament t ORDER BY t.date DESC LIMIT 1")
-//    Tournament findLastTournament();
-
-    // НЕ РАБОТАЕТ
-//    @Query( value = "SELECT t FROM Tournament t ORDER BY t.date DESC")
-//    Tournament findTournamentByDate();
-
-    //Tournament findFirstByOrderByDateDesc();
     Tournament findFirstByDateAfterOrderByDateAsc(Date date);
 }

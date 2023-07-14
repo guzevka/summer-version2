@@ -23,14 +23,6 @@ public class BookedTrainingController {
     private final UserService userService;
     private final TrainingService trainingService;
     private final BookedTrainingService bookedTrainingService;
-/*
-    @GetMapping("/rents/new/{id}")
-    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
-    public String addRent(@PathVariable long id, Model model) {
-        model.addAttribute("object", new Rent());
-        model.addAttribute("apartment", apartmentService.getApartmentById(id));
-        return "rents/new";
-    }*/
 
     @GetMapping("/bookedTraining/new/{id}")
     @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
@@ -57,24 +49,4 @@ public class BookedTrainingController {
         }
         return "redirect:/";
     }
-
-/*
-    @PostMapping("/rents/add")
-    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
-    public String addRent(@ModelAttribute("object") Rent object, BindingResult br, Model model) {
-        try {
-            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-            User user = userService.findByEmail(auth.getName());
-            object.setUser(user);
-            rentService.save(object);
-        } catch(Exception e) {
-            e.printStackTrace();
-            model.addAttribute("object", new Rent());
-            model.addAttribute("apartment", apartmentService.getApartmentById(object.getApartment().getId()));
-            model.addAttribute("error", "Нет доступных апартаментов на выбранный период");
-            return "rents/new";
-        }
-        return "redirect:/";
-    }*/
-
 }

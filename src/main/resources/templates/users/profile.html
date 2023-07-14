@@ -72,7 +72,7 @@
         </form>
         <div th:if="${user != null}">
             <form th:action="@{/logout}" method="post">
-                <button type="submit">Выйти</button>
+                <input type="submit" value="Выйти"></input>
             </form>
         </div>
         <div th:if="${user.isAdmin()}">

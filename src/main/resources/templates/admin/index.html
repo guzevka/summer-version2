@@ -39,6 +39,7 @@
         </div>
     </div>
 </div>
+<div class="main-block">
 <h4>Панель администратора</h4>
 <table border="1">
     <thead>
@@ -53,9 +54,9 @@
     </thead>
     <tbody>
     <tr th:each="user : ${users}">
-        <td th:text="${user.email}" />
-        <td th:text="${user.phoneNumber}" />
-        <td th:text="${user.active}" />
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.phoneNumber}"></td>
+        <td th:text="${user.active}"></td>
         <td>
             <ul>
                 <li th:each="role : ${user.roles}" th:text="${role}"></li>
@@ -63,7 +64,7 @@
         </td>
         <td>
             <form th:action="@{/admin/user/ban/{userId}(userId=${user.id})}" method="post">
-                <button type="submit">Бан</button>
+                <input type="submit" value="Бан"></input>
             </form>
         </td>
         <td>
@@ -79,5 +80,6 @@
     </tr>
     </tbody>
 </table>
+</div>
 </body>
 </html>

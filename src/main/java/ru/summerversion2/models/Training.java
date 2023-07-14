@@ -26,8 +26,4 @@ public class Training {
 
     @Column(name = "location")
     private String location;
-
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "user_id")
-//    private User user;
 }

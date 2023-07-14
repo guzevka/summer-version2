@@ -22,8 +22,6 @@ public class TeamController {
     private final TeamService teamService;
     private final UserService userService;
     private final ParticipantService participantService;
-    private final ParticipantRepository participantRepository;
-    private final TeamRepository teamRepository;
 
     @GetMapping("team/index")
     public String listTeams(@RequestParam(name = "title", required = false) String title, Model model) {
@@ -38,6 +36,7 @@ public class TeamController {
         return "teams/info";
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     @GetMapping("/team/create")
     public String createTeam(Model model) {
         model.addAttribute("team", new Team());
@@ -48,6 +47,7 @@ public class TeamController {
     // Создание команды (Сначала нужно создать команду только с названием,
     // а уже потом искать по идентификатору людей и добавлять по одному в
     // команду)
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     @PostMapping("/team/create")
     public String createTeam(@ModelAttribute("team") @RequestBody Team team, Model model) {
         model.addAttribute("team", team);
@@ -63,6 +63,7 @@ public class TeamController {
         return "teams/findUsers";
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     @PostMapping("/team/{team_id}/add-participant/{user_id}")
     public String addParticipantToTeam(@PathVariable("team_id") Long team_id,
                                        @PathVariable("user_id") Long user_id,
@@ -77,8 +78,6 @@ public class TeamController {
         Team team = teamService.getTeamById(teamId); // Получаем team_id из скрытого поля в форме
         participant.setTeam(team);
         participantService.addParticipantToTeam(participant);
-        teamService.save(team);
-        //return "redirect:/team/" + team.getId(); // Перенаправляем на страницу команды
         return "redirect:/team/info/" + team.getId();
     }
 
