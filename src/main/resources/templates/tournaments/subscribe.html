@@ -6,6 +6,46 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
+<div class="container">
+    <div class="header">
+        <a href="/"><img src="/img/logo1.png" class="logo"></a>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/other/about">о нас</a>
+                    </li>
+                    <li>
+                        <a href="/team/index">команды</a>
+                    </li>
+                    <li>
+                        <a href="/training/list">тренировки</a>
+                    </li>
+                    <li>
+                        <a href="/news/list">новости</a>
+                    </li>
+                    <li>
+                        <a href="/tournament/list">турниры</a>
+                    </li>
+                    <li>
+                        <a href="/other/disciplines">дисциплины</a>
+                    </li>
+                    <li>
+                        <a href="/profile"><img src="/img/dog.png" class="profile_icon"></a>
+                    </li>
+                </ul>
+            </nav>
 
+        </div>
+    </div>
+    <div class="main-block">
+        <h1>ВЫ ЗАРЕГИСТРИРОВАНЫ НА ТУРНИР!</h1>
+        <img src="/img/bigdog.png">
+        <form th:action="@{/}" method="get">
+            <input type="submit" value="Вернуться назад"/>
+        </form>
+    </div>
+
+</div>
 </body>
 </html>

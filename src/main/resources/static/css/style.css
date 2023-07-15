@@ -214,4 +214,19 @@ input{
     font-family: var(--press);
 }
 
+.liga{
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    width: 70%;
+}
+.liga-block{
+    margin: 20px;
+    padding: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #78FEFF, #1312ff) 1;
+    font-family: var(--press);
+}
+
 
