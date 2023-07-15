@@ -66,7 +66,21 @@
                 <td>Идентификатор:</td>
                 <td><p th:text="*{identifier}"></p></td>
             </tr>
+
         </table>
+
+        <table>
+            <tr>
+                <td>Команда(-ы):</td>
+                <tr th:each="team : ${teams}">
+                    <td th:text="${team.title}"></td>
+                </tr>
+            </tr>
+
+        </table>
+
+
+
         <form th:action="@{/}" method="get">
             <input type="submit" value="Вернуться назад"/>
         </form>

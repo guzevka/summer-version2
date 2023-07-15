@@ -8,9 +8,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.summerversion2.models.User;
+import ru.summerversion2.services.ParticipantService;
+import ru.summerversion2.services.TeamService;
 import ru.summerversion2.services.UserService;
 
 @Controller
@@ -18,6 +19,8 @@ import ru.summerversion2.services.UserService;
 public class UserController {
 
     private final UserService userService;
+    private final ParticipantService participantService;
+    private final TeamService teamService;
 
     @GetMapping("/login")
     public String login(){
@@ -55,6 +58,10 @@ public class UserController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.getUserByEmail(auth.getName());
         model.addAttribute("user", user);
+        if(!(teamService.findByUserId(user.getId()) == null)){
+            model.addAttribute("teams", teamService.findByUserId(user.getId()));
+            return "users/profile";
+        }
         return "users/profile";
     }
 

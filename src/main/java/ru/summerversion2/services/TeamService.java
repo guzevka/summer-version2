@@ -8,6 +8,7 @@ import ru.summerversion2.repositories.ParticipantRepository;
 import ru.summerversion2.repositories.TeamRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -18,6 +19,11 @@ public class TeamService {
 
     public Team getTeamById(Long id){
         return teamRepository.getTeamById(id);
+    }
+
+    public List<Team> findByUserId(Long userId) {
+        List<Long> teamIds = participantRepository.findTeamIdsByUserId(userId);
+        return teamRepository.findAllById(teamIds);
     }
 
     public Team findTeamByTitle(String title){
