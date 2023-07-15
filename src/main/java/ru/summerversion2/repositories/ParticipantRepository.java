@@ -14,5 +14,7 @@ public interface ParticipantRepository extends JpaRepository<Participant, Long> 
 
     List<Participant> findByTeamId(Long teamId);
 
+    @Query("SELECT COUNT(p) FROM Participant p WHERE p.team.id = :team_id")
+    int countParticipantsByTeamId(@Param("team_id") Long team_id);
 
 }

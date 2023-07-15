@@ -23,11 +23,16 @@ public class ParticipantService {
     public void addParticipantToTeam(Participant participant){
         Participant existingParticipant = participantRepository.findParticipantByTeamIdAndUserId(participant.getTeam().getId(),participant.getUser().getId());
 
+        // кол-во участников, данное изначально
+        int numParticipants = participantRepository.countParticipantsByTeamId(participant.getTeam().getId());
+
         if(existingParticipant == null){
 
+            if (numParticipants >= participant.getTeam().getQuantity()) {
+                throw new IllegalArgumentException("лохушка");
+            }
             participant.setTeam(teamRepository.getTeamById(participant.getTeam().getId()));
             participant.setUser(userRepository.findById(participant.getUser().getId()).orElse(null));
-
             participantRepository.save(participant);
 
         } else {
