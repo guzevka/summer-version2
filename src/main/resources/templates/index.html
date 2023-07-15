@@ -43,7 +43,7 @@
 
 <div class="main-block">
     <div class="trnmnt">
-        <div class="trnmnt_info" th:object="${latestTournament}">
+        <div class="trnmnt_info" th:if="${latestTournament != null}" th:object="${latestTournament}">
             <h1>ТУРНИР</h1>
             <h3 th:text="*{title}"></h3>
             <h4 th:text="*{place}"></h4>
@@ -55,12 +55,12 @@
 
 
         </div>
-        <div class="trnmnt_banner">
-            <img src="/img/filler.png">
-            <form th:action="@{/tournament/{id}(id=${latestTournament.id})}" method="get">
-                <input type="submit" th:value="'подробнее'"/>
-            </form>
-        </div>
+<!--        <div class="trnmnt_banner">-->
+<!--            <img src="/img/filler.png">-->
+<!--            <form th:if="" th:action="@{/tournament/{id}(id=${latestTournament.id})}" method="get">-->
+<!--                <input type="submit" th:value="'подробнее'"/>-->
+<!--            </form>-->
+<!--        </div>-->
     </div>
 
     <div class="liga">
@@ -84,7 +84,7 @@
 
     <div class="title-block"><p>новости</p></div>
     <div>
-        <ul th:each="n : ${latestNews}">
+        <ul th:if="${latestNews.size() > 0}" th:each="n : ${latestNews}">
             <div class="block">
                 <h4 th:text="${n.title}"></h4>
                 <h3 th:text="${n.description}"></h3>
