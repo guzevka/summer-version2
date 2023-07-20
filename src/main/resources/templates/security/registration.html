@@ -38,22 +38,23 @@
 
         </div>
     </div>
+    <div class="main-block">
+        <h4>Регистрация</h4>
+        <form th:action="@{/registration}" method="post">
+            Эл. почта: <input type="email" th:name="email"><br>
+            Имя: <input type="text" th:name="name"><br>
+            Фамилия: <input type="text" th:name="surname"><br>
+            Номер телефона: <input type="text" th:name="phoneNumber"><br>
+            Пароль: <input type="password" th:name="password"><br>
+            <input type="submit" value="Зарегистрироваться"/>
+        </form>
+        <form th:action="@{/}" method="get"><br>
+            <input type="submit" value="На главную страницу"/>
+        </form><br>
+    </div>
 </div>
 
-<div class="main-block">
-    <h4>Регистрация</h4>
-    <form th:action="@{/registration}" method="post">
-        Эл. почта: <input type="email" th:name="email"><br>
-        Имя: <input type="text" th:name="name"><br>
-        Фамилия: <input type="text" th:name="surname"><br>
-        Номер телефона: <input type="text" th:name="phoneNumber"><br>
-        Пароль: <input type="password" th:name="password"><br>
-        <input type="submit" value="Зарегистрироваться"/>
-    </form>
-    <form th:action="@{/}" method="get"><br>
-        <input type="submit" value="На главную страницу"/>
-    </form><br>
-</div>
+
 
 </body>
 </html>

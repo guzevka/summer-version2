@@ -38,47 +38,48 @@
 
     </div>
   </div>
-</div>
-<div class="main-block">
-  <div th:object="${user}">
-    <table >
-      <tr>
-        <td class="right">Имя:</td>
-        <td><p th:text="*{name}"></p></td>
-      </tr>
-      <tr>
-        <td class="right">Фамилия:</td>
-        <td><p th:text="*{surname}"></p></td>
-      </tr>
-      <tr>
-        <td>Почта:</td>
-        <td><p th:text="*{email}"></p></td>
-      </tr>
-      <tr>
-        <td>Номер телефона:</td>
-        <td><p th:text="*{phoneNumber}"></p></td>
-      </tr>
-      <tr>
-        <td>Идентификатор:</td>
-        <td><p th:text="*{identifier}"></p></td>
-      </tr>
-      <tr>
-        <td>ID TEAM:</td>
-        <td><p th:text="${team.id}"></p></td>
-      </tr>
-      <tr>
-        <td>ID USER:</td>
-        <td><p th:text="${user.id}"></p></td>
-      </tr>
-    </table>
+  <div class="main-block">
+    <div th:object="${user}">
+      <table >
+        <tr>
+          <td class="right">Имя:</td>
+          <td><p th:text="*{name}"></p></td>
+        </tr>
+        <tr>
+          <td class="right">Фамилия:</td>
+          <td><p th:text="*{surname}"></p></td>
+        </tr>
+        <tr>
+          <td>Почта:</td>
+          <td><p th:text="*{email}"></p></td>
+        </tr>
+        <tr>
+          <td>Номер телефона:</td>
+          <td><p th:text="*{phoneNumber}"></p></td>
+        </tr>
+        <tr>
+          <td>Идентификатор:</td>
+          <td><p th:text="*{identifier}"></p></td>
+        </tr>
+        <tr>
+          <td>ID TEAM:</td>
+          <td><p th:text="${team.id}"></p></td>
+        </tr>
+        <tr>
+          <td>ID USER:</td>
+          <td><p th:text="${user.id}"></p></td>
+        </tr>
+      </table>
 
-    <form th:action="@{/team/{team_id}/add-participant/{user_id}(team_id=${team.id}, user_id=${user.id})}" method="post">
-      <input type="hidden" name="team_id" th:value="${team.id}"/>
-      <input type="submit" value="Добавить участника в эту команду"/>
-    </form>
+      <form th:action="@{/team/{team_id}/add-participant/{user_id}(team_id=${team.id}, user_id=${user.id})}" method="post">
+        <input type="hidden" name="team_id" th:value="${team.id}"/>
+        <input type="submit" value="Добавить участника в эту команду"/>
+      </form>
 
+    </div>
   </div>
 </div>
+
 
 </body>
 </html>

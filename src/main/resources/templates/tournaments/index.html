@@ -38,15 +38,14 @@
 
         </div>
     </div>
-</div>
-<div class="title-block">
-    <h4>LIST OF TOURNAMENTS</h4>
-</div>
-<div class="admin-block">
-    <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/tournament/create">Добавить </a>
-</div>
-<div class="main-block">
 
+    <div class="main-block">
+        <div class="title-block">
+            <h4>LIST OF TOURNAMENTS</h4>
+        </div>
+        <div class="admin-block">
+            <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/tournament/create">Добавить </a>
+        </div>
 
         <div th:if="${tournaments}" th:each="tournaments : ${tournaments}" class="block">
             <p><b th:text="${tournaments.title}"></b><br> <span th:text="${tournaments.description}"></span></p>
@@ -55,7 +54,9 @@
             </form>
         </div>
 
+    </div>
 </div>
+
 
 
 </body>

@@ -38,32 +38,34 @@
 
     </div>
   </div>
-</div>
-<div class="title-block">
-  <h4>LIST OF TEAMS</h4>
-</div>
-<div class="admin-block">
-  <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/team/create">Добавить </a>
-</div>
-<div class="main-block">
 
-  <div class="two-block">
-    <div th:if="${teams}" th:each="team : ${teams}" class="block">
-      <p><b th:text="${team.title}"></b><br> <span th:text="${team.description}"></span></p>
+  <div class="main-block">
+    <div class="title-block">
+      <h4>LIST OF TEAMS</h4>
+    </div>
+    <div class="admin-block">
+      <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/team/create">Добавить </a>
+    </div>
 
-      <!--form th:action="@{/team/{id}(id=${team.id})}" method="get">
-        <input type="submit" th:value="'Подробнее'"/>
-      </form-->
+    <div class="two-block">
+      <div th:if="${teams}" th:each="team : ${teams}" class="block">
+        <p><b th:text="${team.title}"></b><br> <span th:text="${team.description}"></span></p>
 
-      <form th:action="@{/team/info/{team_id}(team_id=${team.id})}" method="get">
-        <input type="submit" th:value="'Подробнее'"/>
-      </form>
+        <!--form th:action="@{/team/{id}(id=${team.id})}" method="get">
+          <input type="submit" th:value="'Подробнее'"/>
+        </form-->
 
-      <form th:action="@{/team/{team_id}/findUser(team_id=${team.id})}" sec:authorize="hasAuthority('ROLE_ADMIN')">
-        <input type="submit" th:value="'Добавить участников'"/>
-      </form>
+        <form th:action="@{/team/info/{team_id}(team_id=${team.id})}" method="get">
+          <input type="submit" th:value="'Подробнее'"/>
+        </form>
+
+        <form th:action="@{/team/{team_id}/findUser(team_id=${team.id})}" sec:authorize="hasAuthority('ROLE_ADMIN')">
+          <input type="submit" th:value="'Добавить участников'"/>
+        </form>
+      </div>
     </div>
   </div>
 </div>
+
 </body>
 </html>

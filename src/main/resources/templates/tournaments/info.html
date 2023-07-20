@@ -38,22 +38,23 @@
 
         </div>
     </div>
-</div>
-<div class="title-block">
-    <h4>TOURNAMENT</h4>
-</div>
-<div class="main-block">
-    <div th:object="${tournament}">
-        <h5>Название:</h5>
-        <p th:text="*{title}"></p>
-        <h5>Описание:</h5>
-        <p th:text="*{description}"></p>
-        <h5>Дата проведения:</h5>
-        <p th:text="*{date}"></p>
-        <form th:action="@{/tournament/delete/{id}(id=${tournament.id})}" method="post">
-            <input sec:authorize="hasAuthority('ROLE_ADMIN')" type="submit" value="Удалить"/>
-        </form>
+    <div class="title-block">
+        <h4>TOURNAMENT</h4>
+    </div>
+    <div class="main-block">
+        <div th:object="${tournament}">
+            <h5>Название:</h5>
+            <p th:text="*{title}"></p>
+            <h5>Описание:</h5>
+            <p th:text="*{description}"></p>
+            <h5>Дата проведения:</h5>
+            <p th:text="*{date}"></p>
+            <form th:action="@{/tournament/delete/{id}(id=${tournament.id})}" method="post">
+                <input sec:authorize="hasAuthority('ROLE_ADMIN')" type="submit" value="Удалить"/>
+            </form>
+        </div>
     </div>
 </div>
+
 </body>
 </html>

@@ -38,20 +38,21 @@
 
         </div>
     </div>
+    <div class="main-block">
+        <label>Участники:</label>
+
+        <form th:action="@{/team/changeStatus}" method="get">
+            <label for="identifier">Идентификатор</label>
+            <input id="identifier" type="text" name="identifier">
+
+            <input type="hidden" name="team_id" th:value="${team.id}">
+
+            <p th:text="${team.id}"></p>
+            <input type="submit" value="Найти"></input>
+        </form>
+
+    </div>
 </div>
-<div class="main-block">
-  <label>Участники:</label>
 
-    <form th:action="@{/team/changeStatus}" method="get">
-        <label for="identifier">Идентификатор</label>
-        <input id="identifier" type="text" name="identifier">
-
-        <input type="hidden" name="team_id" th:value="${team.id}">
-
-        <p th:text="${team.id}"></p>
-        <input type="submit" value="Найти"></input>
-    </form>
-
-</div>
 </body>
 </html>

@@ -38,15 +38,14 @@
 
         </div>
     </div>
-</div>
-<div class="title-block">
-    <h4>LIST OF NEWS</h4>
-</div>
-<div class="admin-block">
-    <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/news/create">Добавить </a>
-</div>
-<div class="main-block">
 
+    <div class="main-block">
+        <div class="title-block">
+            <h4>LIST OF NEWS</h4>
+        </div>
+        <div class="admin-block">
+            <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="/news/create">Добавить </a>
+        </div>
 
         <div th:if="${news}" th:each="news : ${news}" class="block">
             <p><b th:text="${news.title}"></b><br> <span th:text="${news.description}"></span></p>
@@ -55,6 +54,8 @@
             </form>
         </div>
 
+    </div>
 </div>
+
 </body>
 </html>

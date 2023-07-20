@@ -39,69 +39,95 @@
 
         </div>
     </div>
-</div>
+    <div class="main-block">
 
-<div class="main-block">
-    <div class="trnmnt" th:if="${latestTournament != null}" th:object="${latestTournament}">
-        <div class="trnmnt_info" >
-            <h1>ТУРНИР</h1>
-            <h3 th:text="*{title}"></h3>
-            <h4 th:text="*{place}"></h4>
-            <h5 th:text="*{date}"></h5>
+        <div class="trnmnt" th:if="${latestTournament != null}" th:object="${latestTournament}">
 
-            <form th:action="@{/tournament/subscribe}" method="get">
-                <input type="submit" th:value="'регистрация'">
-            </form>
+            <div class="trnmnt_info" >
+
+                <h1>ТУРНИР</h1>
+                <h3 th:text="*{title}"></h3>
+                <h4 th:text="*{place}"></h4>
+                <h5 th:text="*{date}"></h5>
+
+                <form th:action="@{/tournament/subscribe}" method="get">
+                    <input type="submit" th:value="'регистрация'">
+                </form>
 
 
-        </div>
-        <div class="trnmnt_banner">
-            <img src="/img/filler.png">
-            <form th:action="@{/tournament/{id}(id=${latestTournament.id})}" method="get">
-                <input type="submit" th:value="'подробнее'"/>
-            </form>
-        </div>
-    </div>
-
-    <div class="liga">
-        <a href="/">
-            <div class="liga-block">
-                <h3>ЛИГА СТУДЕНТОВ</h3>
-                <p>киберпсы</p>
-                <img src="/img/bigdog.png">
             </div>
-        </a>
-
-        <a href="/">
-            <div class="liga-block">
-                <h3>ЛИГА ШКОЛЬНИКОВ</h3>
-                <p>киберщенки</p>
-                <img src="/img/babydog.png">
-            </div>
-        </a>
-
-    </div>
-
-    <div class="title-block"><p>новости</p></div>
-    <div>
-        <ul th:if="${latestNews.size() > 0}" th:each="n : ${latestNews}">
-            <div class="block">
-                <h4 th:text="${n.title}"></h4>
-                <h3 th:text="${n.description}"></h3>
-                <form th:action="@{/news/{id}(id=${n.id})}" method="get">
+            <div class="trnmnt_banner">
+                <img src="/img/logo-dog.png" class="banner-img">
+                <form th:action="@{/tournament/{id}(id=${latestTournament.id})}" method="get">
                     <input type="submit" th:value="'подробнее'"/>
                 </form>
             </div>
-        </ul>
+        </div>
+
+        <div class="liga">
+            <a href="/">
+                <div class="liga-block">
+                    <h3>ЛИГА СТУДЕНТОВ</h3>
+                    <p>киберпсы</p>
+                    <img src="/img/bigdog.png" class="cyberdog">
+                </div>
+            </a>
+
+            <a href="/">
+                <div class="liga-block">
+                    <h3>ШКОЛЬНАЯ ЛИГА</h3>
+                    <p>киберщенки</p>
+                    <img src="/img/babydog.png" class="cyberpup">
+                </div>
+            </a>
+
+        </div>
+        <div class="news-block" >
+            <div class="title-block"><p>новости</p></div>
+            <div class="qwerty">
+                <ul th:if="${latestNews.size() > 0}" th:each="n : ${latestNews}">
+                    <div class="block">
+                        <h4 th:text="${n.title}"></h4>
+                        <h3 th:text="${n.description}"></h3>
+                        <form th:action="@{/news/{id}(id=${n.id})}" method="get">
+                            <input type="submit" th:value="'подробнее'"/>
+                        </form>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sponsors">
+            <div class="title-block">
+                <p>наши партнеры</p>
+            </div>
+            <div class="sponsors-logo">
+                <a href="https://www.neoflex.ru/"><img src="/img/neoflex.png"  height="100px"></a>
+                <a href="https://sibintek.ru/"><img src="/img/sibintek.png"  height="100px"></a>
+                <a href="https://www.gazprom.ru/"><img src="/img/gaz.png" height="100px"></a>
+                <a href="https://www.rosneft.ru/"><img src="/img/rosneft.png" height="100px"></a>
+            </div>
+        </div>
     </div>
 
 </div>
 
-
-<div class="sponsors">
-</div>
 <footer>
-
+    <div class="title-block">
+        <p>контакты</p>
+    </div>
+    <div class="footer-block">
+        <div class="contacts">
+            <img src="/img/vk.png">
+            <img src="/img/tg.png">
+            <img src="/img/twitch.png">
+        </div>
+        <div class="bottom">
+            <p>@ Киберклуб СГТУ 2023</p>
+            <p>(8452) 99-87-15 | cyberclub@sstu.ru</p>
+        </div>
+    </div>
 </footer>
 </body>
 </html>
+

@@ -38,36 +38,37 @@
 
     </div>
   </div>
-</div>
-<div class="title-block">
-  <h4>Учетная запись пользователя</h4>
-</div>
-<div class="main-block">
+  <div class="title-block">
+    <h4>Учетная запись пользователя</h4>
+  </div>
+  <div class="main-block">
 
-  <div th:object="${user}">
-    <table >
-      <tr>
-        <td class="right">Имя:</td>
-        <td><p th:text="*{name}"></p></td>
-      </tr>
-      <tr>
-        <td class="right">Фамилия:</td>
-        <td><p th:text="*{surname}"></p></td>
-      </tr>
-      <tr>
-        <td>Почта:</td>
-        <td><p th:text="*{email}"></p></td>
-      </tr>
-      <tr>
-        <td>Номер телефона:</td>
-        <td><p th:text="*{phoneNumber}"></p></td>
-      </tr>
-      <tr>
-        <td>Идентификатор:</td>
-        <td><p th:text="*{identifier}"></p></td>
-      </tr>
-    </table>
+    <div th:object="${user}">
+      <table >
+        <tr>
+          <td class="right">Имя:</td>
+          <td><p th:text="*{name}"></p></td>
+        </tr>
+        <tr>
+          <td class="right">Фамилия:</td>
+          <td><p th:text="*{surname}"></p></td>
+        </tr>
+        <tr>
+          <td>Почта:</td>
+          <td><p th:text="*{email}"></p></td>
+        </tr>
+        <tr>
+          <td>Номер телефона:</td>
+          <td><p th:text="*{phoneNumber}"></p></td>
+        </tr>
+        <tr>
+          <td>Идентификатор:</td>
+          <td><p th:text="*{identifier}"></p></td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
+
 </body>
 </html>

@@ -38,23 +38,24 @@
 
         </div>
     </div>
-</div>
-<div class="title-block">
-    <h4>NEWS</h4>
-</div>
-<div class="main-block">
-    <div th:object="${news}">
-        <h5>Название:</h5>
-        <p th:text="*{title}"></p>
-        <h5>Описание:</h5>
-        <p th:text="*{description}"></p>
-        <h5>Дата добавления:</h5>
-        <p th:text="*{date}"></p>
-        <form th:action="@{/news/delete/{id}(id=${news.id})}" method="post">
-            <input sec:authorize="hasAuthority('ROLE_ADMIN')" type="submit" value="Удалить"/>
+    <div class="title-block">
+        <h4>NEWS</h4>
+    </div>
+    <div class="main-block">
+        <div th:object="${news}">
+            <h5>Название:</h5>
+            <p th:text="*{title}"></p>
+            <h5>Описание:</h5>
+            <p th:text="*{description}"></p>
+            <h5>Дата добавления:</h5>
+            <p th:text="*{date}"></p>
+            <form th:action="@{/news/delete/{id}(id=${news.id})}" method="post">
+                <input sec:authorize="hasAuthority('ROLE_ADMIN')" type="submit" value="Удалить"/>
 
-        </form>
+            </form>
+        </div>
     </div>
 </div>
+
 </body>
 </html>

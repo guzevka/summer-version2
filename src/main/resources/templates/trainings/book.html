@@ -38,43 +38,44 @@
 
         </div>
     </div>
-</div>
-<div class="main-block">
+    <div class="main-block">
 
-    <form th:object="${object}" th:action="@{/bookedTraining/add}" method="post">
-        <input type="hidden"  th:field="*{id}"/>
-        <input type="hidden"  th:attr="name='training'" th:value="${training.id}"/>
-        <table>
-            <tr>
-                <td>ID:</td>
-                <td th:utext="${training.id}">...</td>
-            </tr>
-            <tr>
-                <td>Описание:</td>
-                <td th:utext="${training.description}">...</td>
-            </tr>
-            <tr>
-                <td>Локация:</td>
-                <td th:utext="${training.location}">...</td>
-            </tr>
-            <tr>
-                <td>Дата:</td>
-                <td th:utext="${training.date}">...</td>
-            </tr>
-            <tr>
-                <td>Время:</td>
-                <td th:utext="${training.time}">...</td>
-            </tr>
-            <tr>
-                <td>Длительность:</td>
-                <td th:utext="${training.duration}">...</td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Записаться"></input></td>
-            </tr>
-        </table>
-    </form>
+        <form th:object="${object}" th:action="@{/bookedTraining/add}" method="post">
+            <input type="hidden"  th:field="*{id}"/>
+            <input type="hidden"  th:attr="name='training'" th:value="${training.id}"/>
+            <table>
+                <tr>
+                    <td>ID:</td>
+                    <td th:utext="${training.id}">...</td>
+                </tr>
+                <tr>
+                    <td>Описание:</td>
+                    <td th:utext="${training.description}">...</td>
+                </tr>
+                <tr>
+                    <td>Локация:</td>
+                    <td th:utext="${training.location}">...</td>
+                </tr>
+                <tr>
+                    <td>Дата:</td>
+                    <td th:utext="${training.date}">...</td>
+                </tr>
+                <tr>
+                    <td>Время:</td>
+                    <td th:utext="${training.time}">...</td>
+                </tr>
+                <tr>
+                    <td>Длительность:</td>
+                    <td th:utext="${training.duration}">...</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Записаться"></input></td>
+                </tr>
+            </table>
+        </form>
 
+    </div>
 </div>
+
 </body>
 </html>

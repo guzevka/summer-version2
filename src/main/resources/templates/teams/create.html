@@ -38,33 +38,34 @@
 
         </div>
     </div>
+    <div class="main-block">
+
+        <form method="post" th:action="@{/team/create}" enctype="multipart/form-data">
+            <label>Название команды:</label>
+            <br><br>
+            <input type="text" th:field="*{team.title}">
+            <br><br>
+            <label>Описание команды (девиз и так далее):</label>
+            <br><br>
+            <input type="text" th:field="*{team.description}">
+            <br><br>
+            <label>Количество участников</label>
+            <br><br>
+            <input type="number" th:field="*{team.quantity}">
+            <br><br>
+            <input type="submit" value="Создать команду"></input>
+        </form>
+
+        <!-- Рабочая штука по поиску участника по идентификатору -->
+        <!--label>Участники:</label>
+        <form action="/team/changeStatus" method="get">
+            <label for="identifier">Идентификатор</label>
+            <input id="identifier" type="text" name="identifier">
+            <button type="submit">Найти</button>
+        </form-->
+
+    </div>
 </div>
-<div class="main-block">
 
-    <form method="post" th:action="@{/team/create}" enctype="multipart/form-data">
-        <label>Название команды:</label>
-        <br><br>
-        <input type="text" th:field="*{team.title}">
-        <br><br>
-        <label>Описание команды (девиз и так далее):</label>
-        <br><br>
-        <input type="text" th:field="*{team.description}">
-        <br><br>
-        <label>Количество участников</label>
-        <br><br>
-        <input type="number" th:field="*{team.quantity}">
-        <br><br>
-        <input type="submit" value="Создать команду"></input>
-    </form>
-
-    <!-- Рабочая штука по поиску участника по идентификатору -->
-    <!--label>Участники:</label>
-    <form action="/team/changeStatus" method="get">
-        <label for="identifier">Идентификатор</label>
-        <input id="identifier" type="text" name="identifier">
-        <button type="submit">Найти</button>
-    </form-->
-
-</div>
 </body>
 </html>

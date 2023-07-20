@@ -38,38 +38,39 @@
 
         </div>
     </div>
-</div>
-<div class="main-block">
-    <div th:object="${team}">
+    <div class="main-block">
+        <div th:object="${team}">
+            <table>
+                <tr>
+                    <td>Название:</td>
+                    <td><p th:text="*{title}"></p></td>
+                </tr>
+                <tr>
+                    <td>Описание:</td>
+                    <td><p th:text="*{description}"></p></td>
+                </tr>
+                <tr>
+                    <td>Количество участников:</td>
+                    <td><p th:text="*{quantity}"></p></td>
+                </tr>
+            </table>
+        </div>
+        <p>Список участников команды: </p>
         <table>
             <tr>
-                <td>Название:</td>
-                <td><p th:text="*{title}"></p></td>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
             </tr>
-            <tr>
-                <td>Описание:</td>
-                <td><p th:text="*{description}"></p></td>
-            </tr>
-            <tr>
-                <td>Количество участников:</td>
-                <td><p th:text="*{quantity}"></p></td>
+            <tr th:each="participant : ${participants}" th:object="${participants}">
+                <td th:text="${participant.user.id}"></td>
+                <td th:text="${participant.user.name}"></td>
+                <td th:text="${participant.user.email}"></td>
             </tr>
         </table>
-    </div>
-    <p>Список участников команды: </p>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-        <tr th:each="participant : ${participants}" th:object="${participants}">
-            <td th:text="${participant.user.id}"></td>
-            <td th:text="${participant.user.name}"></td>
-            <td th:text="${participant.user.email}"></td>
-        </tr>
-    </table>
 
+    </div>
 </div>
+
 </body>
 </html>

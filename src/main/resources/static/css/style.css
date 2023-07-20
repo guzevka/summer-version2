@@ -22,7 +22,7 @@ body{
     background: radial-gradient(circle at 300px -100px, #850a80 , #131313 900px),
     radial-gradient(circle at 2000px 1400px, #448585 , #131313 1000px);
     color: white;
-    height: 3500px;
+    min-height: 100vh;
     font-family: Mont, sans-serif;
 }
 
@@ -31,12 +31,11 @@ body{
     align-items: center;
     align-content: center;
     justify-content: center;
-    background: linear-gradient(45deg, #78FEFF, #1312ff);
     background-clip: text;
-    margin: 15px;
-    padding: 15px;
     -webkit-background-clip: text; /* добавляем для Safari */
     color: transparent;
+    color: white;
+    font-size: 30px;
     font-family: var(--press);
 }
 .admin-block{
@@ -44,8 +43,21 @@ body{
     align-items: center;
     align-content: center;
     justify-content: center;
-    margin: 15px;
-    padding: 15px;
+}
+
+.about-block{
+    display: flex;
+}
+.big-about-contacts-block{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+.big-about-block{
+    padding: 10px;
+    margin: 10px;
 }
 
 .main-block{
@@ -64,12 +76,15 @@ body{
 }
 
 .block{
-    margin: 15px;
-    padding: 15px;
-    width: 50%;
+    margin-top: 40px;
+    padding: 30px;
+    width: 100%;
     border-width: 1px;
     border-style: solid;
     border-image: linear-gradient(to right, #78FEFF, #1312ff) 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* тут добавила */
@@ -118,7 +133,7 @@ nav ul li a{
     display: flex;
     flex-direction: row;
     width: 1170px;
-    height: 475px;
+    height: 500px;
     font-family: var(--exo);
 }
 
@@ -137,7 +152,11 @@ nav ul li a{
     align-items: end;
     justify-content: space-between;
     width: 640px;
-    height: 475px;
+    height: 500px;
+}
+
+.banner-img{
+    height: 460px;
 }
 
 h1{
@@ -156,14 +175,6 @@ nav ul{
     font-family: var(--exo);
 }
 
-footer{
-    background: linear-gradient(45deg, #78FEFF, #1312ff);
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    width: 99%;
-}
 a{
     text-decoration:none;
     color: white;
@@ -216,18 +227,96 @@ input{
 }
 
 .liga{
+    margin-top: 100px;
     display: flex;
-    justify-content: center;
-    align-content: space-around;
-    width: 70%;
+    flex-direction: row;
+    width: 1170px;
+    justify-content: space-between;
 }
+
 .liga-block{
-    margin: 20px;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 568px;
+    height: 298px;
     border-width: 1px;
     border-style: solid;
     border-image: linear-gradient(to right, #78FEFF, #1312ff) 1;
     font-family: var(--press);
 }
+
+.cyberdog{
+    width: 165px;
+}
+
+.cyberpup{
+    width: 210px;
+}
+
+.liga-block h3{
+    font-size: 38px;
+    padding-top: 16px;
+}
+
+.news-block {
+    margin-top: 90px;
+    width: 1170px;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.news-block h4{
+    font-size: 25px;
+    text-align: center;
+}
+footer{
+    background: linear-gradient(#131313, #1312ff);
+    height: 300px;
+}
+
+.footer-block{
+    margin: 70px 375px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    font-family: var(--exo);
+}
+
+.contacts{
+    display: flex;
+    flex-direction: row;
+    width: 240px;
+    justify-content: space-between;
+}
+
+.contacts img{
+    height: 70px;
+}
+
+.sponsors{
+    margin: 75px 0px;
+    width: 1170px;
+}
+
+.sponsors-logo{
+    margin: 30px auto;
+    width: 1170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom{
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 
 
