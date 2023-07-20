@@ -23,7 +23,6 @@ public class BookedTrainingController {
     private final UserService userService;
     private final TrainingService trainingService;
     private final BookedTrainingService bookedTrainingService;
-
     @GetMapping("/bookedTraining/new/{id}")
     @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
     public String bookedTraining(@PathVariable Long id, Model model) {
@@ -31,7 +30,6 @@ public class BookedTrainingController {
         model.addAttribute("training", trainingService.findTrainingById(id));
         return "trainings/book";
     }
-
     @PostMapping("/bookedTraining/add")
     @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
     public String addBookedTraining(@ModelAttribute("object") BookedTraining object, BindingResult br, Model model) {

@@ -15,32 +15,24 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TournamentService {
     private final TournamentRepository tournamentRepository;
-
     public Tournament findTournamentByTitle(String title){
         return tournamentRepository.findTournamentByTitle(title);
     }
-
     public Tournament findTournamentById(Long id){
         return tournamentRepository.findTournamentById(id);
     }
-
     public void save(Tournament tournament){
         tournamentRepository.save(tournament);
         log.info("saving new {}", tournament);
     }
-
     public List<Tournament> findAll(){
         return tournamentRepository.findAll();
     }
-
     public void delete(Long id){
         tournamentRepository.deleteById(id);
     }
-
     public Tournament findNearestTournament() {
         Date currentDate = new Date();
         return tournamentRepository.findFirstByDateAfterOrderByDateAsc(currentDate);
     }
-
-
 }

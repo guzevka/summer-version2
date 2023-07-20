@@ -18,18 +18,14 @@ import java.util.List;
 public class HomeController {
     private final TournamentService tournamentService;
     private final NewsService newsService;
-
     @GetMapping("/")
     public String home(Model model) {
-
         // Последний добавленный турнир
         Tournament latestTournament = tournamentService.findNearestTournament();
         model.addAttribute("latestTournament", latestTournament);
-
         List<News> latestNews = newsService.findLatestNews();
         model.addAttribute("latestNews", latestNews);
         System.out.println("hello");
-
         return "index";
     }
 }

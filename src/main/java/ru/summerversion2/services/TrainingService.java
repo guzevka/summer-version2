@@ -13,20 +13,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TrainingService {
     private final TrainingRepository trainingRepository;
-
     public Training findTrainingById(Long id){
         return trainingRepository.findTrainingById(id);
     }
-
     public List<Training> findAll() {
         return trainingRepository.findAll();
     }
-
     public void save(Training training){
         trainingRepository.save(training);
         log.info("saving new {}", training);
     }
-
     public void delete(Long id){
         trainingRepository.deleteById(id);
     }

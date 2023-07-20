@@ -14,28 +14,18 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-//    @Column(name = "username")
-//    private String username;
-
     @Column(name = "email", unique = true)
     private String email;
-
     @Column(name = "phone_number")
     private String phoneNumber;
-
     @Column(name = "name")
     private String name;
-
     @Column(name = "surname")
     private String surname;
-
     @Column(name = "password", length = 1000)
     private String password;
-
     @Column(name = "identifier")
     private String identifier;
-
     @Column(name = "active")
     private boolean active;
 

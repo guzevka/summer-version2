@@ -11,11 +11,9 @@ public class BookedTraining {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "\"user\"")
     private User user;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "training")
     private Training training;

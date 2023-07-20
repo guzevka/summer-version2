@@ -12,6 +12,10 @@ import ru.summerversion2.models.Tournament;
 import ru.summerversion2.services.TournamentService;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -24,39 +28,34 @@ public class TournamentController {
         model.addAttribute("tournament", tournament);
         return "tournaments/info";
     }
-
     @GetMapping("/tournament/list")
     public String listTournament(@RequestParam(name = "title", required = false) String title, Model model){
         model.addAttribute("tournaments", tournamentService.findAll());
         return "tournaments/index";
     }
-
-    // Создать новость (GET AND POST)
     @GetMapping("/tournament/create")
     private String createTournament() throws IOException {
         return "tournaments/create";
     }
     @PostMapping("/tournament/create")
-    private String createTournament(Tournament tournament) {
+    private String createTournament(@RequestParam("date") String dateString, Tournament tournament) throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = dateFormat.parse(dateString);
+        tournament.setDate(date);
         tournamentService.save(tournament);
         return "redirect:/";
     }
-
-    // Удалить новость (POST)
     @PostMapping("/tournament/delete/{id}")
     private String deleteTournament(@PathVariable Long id){
         tournamentService.delete(id);
         return "redirect:/";
     }
-
     @GetMapping("/tournament/subscribe")
     private String subscribeTournament(){
         return "tournaments/subscribe";
     }
-
     @PostMapping("/tournament/subscribe")
     private String subscribeTournament(@PathVariable Long id){
         return "redirect:/";
     }
-
 }

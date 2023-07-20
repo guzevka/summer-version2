@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-
     public boolean createUser(User user){
         String email = user.getEmail();
         if(userRepository.findByEmail(email) != null) return false;
@@ -29,19 +28,15 @@ public class UserService {
         userRepository.save(user);
         return true;
     }
-
     public Optional<User> findById(Long id){
         return userRepository.findById(id);
     }
-
     public User findByIdentifier(String ident){
         return userRepository.findByIdentifier(ident);
     }
-
     public List<User> list() {
         return userRepository.findAll();
     }
-
     public void banUser(Long id) {
         User user = userRepository.findById(id).orElse(null);
         if (user != null) {
@@ -55,7 +50,6 @@ public class UserService {
         }
         userRepository.save(user);
     }
-
     public void changeUserRoles(User user, Map<String, String> form) {
         Set<String> roles = Arrays.stream(Role.values())
                 .map(Role::name)
@@ -68,11 +62,9 @@ public class UserService {
         }
         userRepository.save(user);
     }
-
     public User getUserByEmail(String email){
         return userRepository.findByEmail(email);
     }
-
     public String generateIdentifier(){
         String word = "";
         String symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

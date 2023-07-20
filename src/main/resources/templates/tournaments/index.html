@@ -47,14 +47,14 @@
 </div>
 <div class="main-block">
 
-    <div class="two-block">
+
         <div th:if="${tournaments}" th:each="tournaments : ${tournaments}" class="block">
-            <p><b th:text="${tournaments.title}"></b> <span th:text="${tournaments.description}"></span></p>
+            <p><b th:text="${tournaments.title}"></b><br> <span th:text="${tournaments.description}"></span></p>
             <form th:action="@{/tournament/{id}(id=${tournaments.id})}" method="get">
                 <input type="submit" th:value="'Подробнее'"/>
             </form>
         </div>
-    </div>
+
 </div>
 
 

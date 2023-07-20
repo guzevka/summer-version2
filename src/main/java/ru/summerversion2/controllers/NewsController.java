@@ -13,24 +13,18 @@ import java.io.IOException;
 @Controller
 @RequiredArgsConstructor
 public class NewsController {
-
     private final NewsService newsService;
-
-    // Подробнее о новости
     @GetMapping("/news/{id}")
     public String newsInfo(@PathVariable Long id, Model model) {
         News news = newsService.getNewsById(id);
         model.addAttribute("news", news);
         return "news/info";
     }
-
     @GetMapping("/news/list")
     public String listNews(@RequestParam(name = "title", required = false) String title, Model model){
         model.addAttribute("news", newsService.findAll());
         return "news/index";
     }
-
-    // Создать новость (GET AND POST)
     @GetMapping("/news/create")
     private String createNews() throws IOException {
         return "news/create";
@@ -40,8 +34,6 @@ public class NewsController {
         newsService.save(news);
         return "redirect:/";
     }
-
-    // Удалить новость (POST)
     @PostMapping("/news/delete/{id}")
     private String deleteNews(@PathVariable Long id){
         newsService.delete(id);

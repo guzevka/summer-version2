@@ -8,8 +8,6 @@ import java.util.Date;
 
 public interface TournamentRepository extends JpaRepository<Tournament, Long> {
     Tournament findTournamentByTitle(String title);
-
     Tournament findTournamentById(Long id);
-
     Tournament findFirstByDateAfterOrderByDateAsc(Date date);
 }

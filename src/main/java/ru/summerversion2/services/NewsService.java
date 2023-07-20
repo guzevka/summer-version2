@@ -16,25 +16,20 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NewsService {
     private final NewsRepository newsRepository;
-
     public News getNewsById(Long id) {
         return newsRepository.getNewsById(id);
     }
-
     public List<News> findAll(){
         return newsRepository.findAll();
     }
-
     public void save(News news){
         news.setDate(new Date());
         newsRepository.save(news);
         log.info("saving new {}", news);
     }
-
     public void delete(Long id){
         newsRepository.deleteById(id);
     }
-
     public List<News> findLatestNews() {
         return newsRepository.findTop3ByOrderByDateDesc();
     }

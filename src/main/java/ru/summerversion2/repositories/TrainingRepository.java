@@ -7,9 +7,6 @@ import java.sql.Date;
 import java.util.List;
 
 public interface TrainingRepository extends JpaRepository<Training, Long> {
-
     Training findTrainingById(Long id);
-
     List<Training> findAll();
-
 }

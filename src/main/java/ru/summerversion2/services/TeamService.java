@@ -16,31 +16,23 @@ import java.util.Optional;
 public class TeamService {
     private final TeamRepository teamRepository;
     private final ParticipantRepository participantRepository;
-
     public Team getTeamById(Long id){
         return teamRepository.getTeamById(id);
     }
-
     public List<Team> findByUserId(Long userId) {
         List<Long> teamIds = participantRepository.findTeamIdsByUserId(userId);
         return teamRepository.findAllById(teamIds);
     }
-
     public Team findTeamByTitle(String title){
         return teamRepository.findByTitle(title);
     }
-
     public List<Team> findAll(){
         return teamRepository.findAll();
     }
-
-
-
     public void save(Team team) {
         teamRepository.save(team);
         log.info("saving new team: {}", team);
     }
-
     public void delete(Long id) {
         teamRepository.deleteById(id);
         log.info("delete team: {}", id);

@@ -14,26 +14,21 @@ import ru.summerversion2.services.TrainingService;
 @Controller
 @RequiredArgsConstructor
 public class TrainingController {
-
     private final TrainingService trainingService;
-
     @GetMapping("/training/list")
     public String listTraining(@RequestParam(name = "title", required = false) String title, Model model){
         model.addAttribute("training", trainingService.findAll());
         return "trainings/index";
     }
-
     @GetMapping("/training/create")
     public String createTraining(){
         return "trainings/create";
     }
-
     @PostMapping("/training/create")
     private String createTraining(Training training) {
         trainingService.save(training);
         return "redirect:/";
     }
-
     @PostMapping("/training/delete/{id}")
     private String deleteTraining(@PathVariable Long id){
         trainingService.delete(id);

@@ -49,7 +49,7 @@
 
   <div class="two-block">
     <div th:if="${teams}" th:each="team : ${teams}" class="block">
-      <p><b th:text="${team.title}"></b> <span th:text="${team.description}"></span></p>
+      <p><b th:text="${team.title}"></b><br> <span th:text="${team.description}"></span></p>
 
       <!--form th:action="@{/team/{id}(id=${team.id})}" method="get">
         <input type="submit" th:value="'Подробнее'"/>

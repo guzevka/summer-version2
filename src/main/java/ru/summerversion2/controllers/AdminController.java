@@ -19,19 +19,16 @@ import java.util.Map;
 @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
 public class AdminController {
     private final UserService userService;
-
     @GetMapping("/admin")
     public String admin(Model model) {
         model.addAttribute("users", userService.list());
         return "admin/index";
     }
-
     @PostMapping("/admin/user/ban/{id}")
     public String userBan(@PathVariable("id") Long id){
         userService.banUser(id);
         return "redirect:/admin";
     }
-
     @GetMapping("/user/{user}")
     public String userInfo(@PathVariable("user") User user, Model model){
         model.addAttribute("user", user);

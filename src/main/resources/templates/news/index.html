@@ -47,14 +47,14 @@
 </div>
 <div class="main-block">
 
-    <div class="two-block">
+
         <div th:if="${news}" th:each="news : ${news}" class="block">
-            <p><b th:text="${news.title}"></b> <span th:text="${news.description}"></span></p>
+            <p><b th:text="${news.title}"></b><br> <span th:text="${news.description}"></span></p>
             <form th:action="@{/news/{id}(id=${news.id})}" method="get">
                 <input type="submit" th:value="'Подробнее'"/>
             </form>
         </div>
-    </div>
+
 </div>
 </body>
 </html>

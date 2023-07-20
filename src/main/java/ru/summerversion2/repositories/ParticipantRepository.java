@@ -8,15 +8,11 @@ import ru.summerversion2.models.Participant;
 import java.util.List;
 
 public interface ParticipantRepository extends JpaRepository<Participant, Long> {
-
     @Query("select p from Participant p where p.team.id = :team_id and p.user.id = :user_id")
     Participant findParticipantByTeamIdAndUserId(@Param("team_id") Long team_id, @Param("user_id") Long user_id);
-
     List<Participant> findByTeamId(Long teamId);
-
     @Query("SELECT COUNT(p) FROM Participant p WHERE p.team.id = :team_id")
     int countParticipantsByTeamId(@Param("team_id") Long team_id);
-
     @Query("SELECT p.team.id FROM Participant p WHERE p.user.id = :userId")
     List<Long> findTeamIdsByUserId(@Param("userId") Long userId);
 
