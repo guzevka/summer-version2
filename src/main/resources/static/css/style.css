@@ -317,6 +317,29 @@ footer{
     justify-content: space-between;
 }
 
+.block-disc{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    margin: 15px;
+}
+
+.disc-decs{
+    margin-left: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.block-disc img{
+    height: 100px;
+}
+.disc-decs img{
+    height: 30px;
+    width: 30px;
+}
+
 
 
 
